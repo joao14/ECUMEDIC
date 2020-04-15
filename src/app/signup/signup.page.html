@@ -1,0 +1,210 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <div class="custom-pagination">
+      <div *ngFor="let bullet of numberss; let i = index" class="pagination-bullet"
+        [ngClass]="{'pagination-bullet-active': activeIndex === i}"></div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header-container">
+    <img src="assets/imgs/header-nav.svg" alt="">
+  </div>
+
+  <div class="signup-slider">
+    <ion-slides #profileImages mode="ios" pager="false" scrollbar="false" (ionSlideDidChange)="onSlideChange()">
+      <ion-slide>
+        <ion-grid>
+          <ion-radio-group>
+            <ion-row class="cat-row" text-center>
+              <ion-col size="5">
+                <ion-item text-center lines="none">
+                  <ion-radio value="sss"></ion-radio>
+                  <ion-label>
+                    <img src="assets/imgs/categoryicns/icn-doctor.svg" alt="">
+                    <p>I'm a Doctor</p>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5">
+                <ion-item text-center lines="none">
+                  <ion-label>
+                    <img src="assets/imgs/categoryicns/icn-hospital.svg" alt="">
+                    <p>I'm a Hospital</p>
+                  </ion-label>
+                  <ion-radio value="fdord"></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5">
+                <ion-item text-center lines="none">
+                  <ion-label>
+                    <img src="assets/imgs/categoryicns/icn-pharmacy.svg" alt="">
+                    <p>I'm a Pharmacy</p>
+                  </ion-label>
+                  <ion-radio value="qq"></ion-radio>
+                </ion-item>
+                <div>
+
+                </div>
+              </ion-col>
+              <ion-col size="5">
+                <ion-item text-center lines="none">
+                  <ion-label>
+                    <img src="assets/imgs/categoryicns/icn-patient.svg" alt="">
+                    <p>I'm a Patient</p>
+                  </ion-label>
+                  <ion-radio value="dsdsds"></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5">
+                <ion-item text-center lines="none">
+                  <ion-label>
+                    <img src="assets/imgs/categoryicns/icn-clinic.svg" alt="">
+                    <p>I'm a Clinic</p>
+                  </ion-label>
+                  <ion-radio value="ffetord"></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col size="5">
+                <ion-item text-center lines="none">
+                  <ion-label>
+                    <img src="assets/imgs/categoryicns/icn-lab.svg" alt="">
+                    <p>I'm a Laboratary</p>
+                  </ion-label>
+                  <ion-radio value="jtj"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+        </ion-grid>
+      </ion-slide>
+      <ion-slide padding>
+
+        <div class="the-form">
+          <div class="section-title">
+            <h2>Account</h2>
+          </div>
+          <ion-item>
+            <span slot="start">
+              <img src="assets/imgs/icn-avatar.svg" alt="">
+            </span>
+            <ion-input type="text" placeholder="USERNAME" text-left></ion-input>
+          </ion-item>
+          <ion-item>
+            <span slot="start">
+              <img src="assets/imgs/icn-avatar.svg" alt="">
+            </span>
+            <ion-input type="email" placeholder="EMAIL" text-left></ion-input>
+          </ion-item>
+          <ion-item>
+            <span slot="start">
+              <img src="assets/imgs/icn-padlock.svg" alt="">
+            </span>
+            <ion-input type="text" placeholder="PASSWORD"></ion-input>
+          </ion-item>
+          <ion-item>
+            <span slot="start">
+              <img src="assets/imgs/icn-padlock.svg" alt="">
+            </span>
+            <ion-input type="text" placeholder="PASSWORD AGAIN"></ion-input>
+          </ion-item>
+        </div>
+      </ion-slide>
+      <ion-slide padding>
+
+        <div class="the-form">
+          <div class="section-title">
+            <h2>Your Name</h2>
+          </div>
+          <ion-item>
+            <span slot="start">
+              <img src="assets/imgs/icn-avatar.svg" alt="">
+            </span>
+            <ion-input type="text" placeholder="FIRST NAME" text-left></ion-input>
+          </ion-item>
+          <ion-item>
+            <span slot="start">
+              <img src="assets/imgs/icn-avatar.svg" alt="">
+            </span>
+            <ion-input type="text" placeholder="LAST NAME" text-left></ion-input>
+          </ion-item>
+        </div>
+      </ion-slide>
+      <ion-slide padding>
+        <div class="the-form" id="dob">
+          <div class="section-title">
+            <h2>Date of birth</h2>
+          </div>
+          <ion-item>
+            <span slot="start">
+              <img src="assets/imgs/icn-avatar.svg" alt="">
+            </span>
+            <ion-datetime displayFormat="MM DD YY" placeholder="SELECT DATE" text-left></ion-datetime>
+          </ion-item>
+        </div>
+      </ion-slide>
+      <ion-slide padding>
+        <div class="the-form" id="gender">
+          <div class="section-title">
+            <h2>Gender</h2>
+          </div>
+          <ion-radio-group>
+            <ion-item lines="none">
+              <ion-label>FEMALE</ion-label>
+              <ion-radio value="female"></ion-radio>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-label>MALE</ion-label>
+              <ion-radio value="male" checked="true"></ion-radio>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label>OTHER</ion-label>
+              <ion-radio value="other"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+      </ion-slide>
+      <ion-slide padding>
+        <div class="the-form" id="weight">
+          <div class="section-title">
+            <h2>Weight</h2>
+          </div>
+          <ion-item (click)="showPicker()">
+            <span slot="start">
+              <img src="assets/imgs/icn-avatar.svg" alt="">
+            </span>
+            <ion-label *ngIf="!weight">SELECT WEIGHT</ion-label>
+            <ion-label *ngIf="weight">{{weight}}</ion-label>
+          </ion-item>
+        </div>
+      </ion-slide>
+      <ion-slide padding>
+        <div class="the-form" id="height">
+          <div class="section-title">
+            <h2>Height</h2>
+          </div>
+          <ion-item (click)="showPicker2()">
+            <span slot="start">
+              <img src="assets/imgs/icn-avatar.svg" alt="">
+            </span>
+            <ion-label *ngIf="!height">SELECT HEIGHT</ion-label>
+            <ion-label *ngIf="height">{{height}}</ion-label>
+          </ion-item>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+</ion-content>
+<ion-footer padding-horizontal no-border>
+  <ion-toolbar >
+    <ion-button (click)="checkIsend()" expand="block">
+      NEXT STEP
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

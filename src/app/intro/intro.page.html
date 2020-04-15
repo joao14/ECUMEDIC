@@ -1,0 +1,55 @@
+<ion-content>
+  <ion-slides mode="ios" pager="ios" scrollbar="false" (ionSlideDidChange)="onSlideChange()" #slidess
+    style="height:90vh;">
+    <ion-slide>
+      <div style="display:block">
+        <div class="slide-img animated pulse" [ngClass]="animate">
+          <img src="assets/imgs/logon.png" style="width: 60%;height: auto;" alt="">
+        </div>
+        <div class="slide-card" padding-horizontal>
+          <h1 class="slide-title">
+            NUTRI <span style="color:#8ec545;">SALUD</span>
+          </h1>
+          <h5>by AddSoft-tech</h5>
+          <p class="slide-description">
+            Asesoramiento Nutricional Integral
+          </p>          
+          <!-- <h4>Dr. Natalia Yanez</h4> -->
+          <h6 style="text-align:center">{{fecha | date : 'yyyy' }}</h6>
+          <h6>Quito - Ecuador</h6>
+          <!-- <p class="slide-description" text-wrap>
+            Una nutrición equilibrada combinada con el ejercicio físico regular es un elemento fundamental de la
+            buena salud
+          </p> -->
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div style="display:block">
+        <div class="slide-img" [ngClass]="animate">
+          <img src="assets/imgs/introImg1.svg" style="width: 90%;" alt="">
+        </div>
+        <div class="slide-card" padding-horizontal>
+          <h3 class="slide-title" style="width: 80%;display: inline-block;">
+            Nutrición, Salud y Bienestar para <span style="color:#8ec545;">ti</span> y tu <span style="color:#8ec545;">familia!</span>
+          </h3>
+          <ion-button (click)="goSignIn()" [ngClass]="animate">
+            Comenzar
+          </ion-button>
+        </div>
+      </div>
+    </ion-slide>    
+    <!-- <ion-slide text-center class="ion-padding">
+      <div style="margin-top: 60%">
+        <ion-grid style="height: 100%">
+          <ion-row justify-content-center align-items-center style="height: 100%">
+            <ion-button (click)="goSignIn()" [ngClass]="animate">
+              Let's Start
+            </ion-button>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </ion-slide> -->
+  </ion-slides>
+</ion-content>

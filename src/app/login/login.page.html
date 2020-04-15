@@ -1,0 +1,58 @@
+<ion-content>
+  <div class="header-container">
+    <div class="front">
+      <h1 style="text-align:center;color:#fff;">Nutri Salud</h1>
+      <div class="the-form" padding>
+        <div style="text-align:center;padding-top:25px;padding-bottom: 25px;">
+          <img src="assets/imgs/logon.png" style="width: 30%;height: auto;" alt="">
+        </div>
+        <ion-item>
+          <span slot="start">
+            <img src="assets/imgs/icn-avatar.svg" alt="">
+          </span>
+          <ion-input type="text" [(ngModel)]="credencial.user" placeholder="Usuario" text-left></ion-input>
+        </ion-item>
+        <ion-item>
+          <span slot="start">
+            <img src="assets/imgs/icn-padlock.svg" alt="">
+          </span>
+          <ion-input type="password" [(ngModel)]="credencial.pass" placeholder="Password"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="back" style="height:70px;background:#00acba;">
+      <!-- <img src="assets/imgs/method-draw-image.svg" style="height:70%;" alt=""> -->
+    </div>
+  </div>
+
+  <div class="btns-holder" padding style="padding-top:35vh;">
+    <ion-button expand="block" text-center id="login" (click)="signIn()">
+      INICIAR
+    </ion-button>
+    <!-- <ion-button expand="block" text-center (click)="signUp()" >
+        SIGNUP
+      </ion-button> -->
+  </div>
+
+  <div class="bottom-img-holder" padding-horizontal>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <img src="assets/imgs/nutri/nutricion-clinica.svg" alt="">
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <img src="assets/imgs/nutri/nutricion-deportiva.svg" alt="">
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <img src="assets/imgs/nutri/reduccion-de-peso.svg" alt="">
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

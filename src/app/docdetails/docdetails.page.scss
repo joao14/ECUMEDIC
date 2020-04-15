@@ -1,0 +1,21 @@
+ion-footer {
+    ion-toolbar {
+        --background: white;
+
+        ion-button {
+            margin-bottom: 20px !important;
+            font-size: 1.2rem !important;
+        }
+    }
+
+}
+
+h4 {
+    text-align: center;
+}
+
+.button-solid-call {
+    --background: #add575 !important;
+    --background-focused: #287ee0;
+    --background-hover: #add575;
+}

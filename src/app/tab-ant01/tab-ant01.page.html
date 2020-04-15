@@ -1,0 +1,174 @@
+<ion-content>
+  <ion-card class="cd">
+    <p text-center style="color:#145a69;">Paciente<br />{{paciente.name}} {{paciente.lastname}}</p>
+  </ion-card>
+  <ion-card class="cd">
+    <ion-row>
+      <ion-col>
+        <div class="tcb">
+          Genero
+        </div>
+      </ion-col>
+      <ion-col text-center>
+        <fa-icon [icon]="paciente.gender === 'F'?['fas','female']:['fas','male']" size="2x"
+          class="{{paciente.gender === 'F' ? 'fabr' : 'fab'}}"></fa-icon>
+      </ion-col>
+      <ion-col>
+        <div text-center>
+          {{paciente.gender === 'F' ? 'Femenino':'Masculino'}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="tcb">
+          Edad
+        </div>
+      </ion-col>
+      <ion-col text-center>
+        <fa-icon [icon]="['far', 'calendar-alt']" size="2x" class="fabp"></fa-icon>
+      </ion-col>
+      <ion-col>
+        <div text-center>
+          {{paciente.ages.years}}&nbsp;Años
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="tcb">
+          Peso
+        </div>
+      </ion-col>
+      <ion-col text-center>
+        <fa-icon [icon]="['fas', 'weight']" size="2x" class="fabp"></fa-icon>
+      </ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <div text-center>
+              {{paciente.weight | number: '1.2-2' }}&nbsp;[Kg]
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div text-center>
+              {{paciente.weight * 2.2 | number: '1.2-2' }}&nbsp;[lb]
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="tcb">
+          Talla
+        </div>
+      </ion-col>
+      <ion-col text-center>
+        <fa-icon [icon]="['fas', 'arrows-alt-v']" size="2x" class="fabp"></fa-icon>
+      </ion-col>
+      <ion-col>
+        <div text-center>
+          {{paciente.size}}&nbsp;[m]
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="val">
+    <ion-row>
+      <ion-col text-right style="vertical-align: middle;">
+        <button class="btni" ion-button icon-start aria-label="Índice de Masa Corporal" data-balloon-pos="right">
+          <fa-icon [icon]="['far', 'question-circle']" style="font-size: 0.99rem;"></fa-icon>
+        </button>
+        &nbsp;IMC
+      </ion-col>
+      <ion-col style="vertical-align: middle;">
+        <div text-left>
+          {{paciente.imc}}
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+  <ion-card class="cd">
+    <ion-row>
+      <ion-col>
+        <div class="tcb">
+          Perímetro Cintura
+        </div>
+      </ion-col>
+      <ion-col text-center>
+        <fa-icon [icon]="['fas', 'arrows-alt-h']" size="2x" class="fabp"></fa-icon>
+      </ion-col>
+      <ion-col>
+        <div text-center>
+          {{paciente.mcintura}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="tcb">
+          Perímetro Cadera
+        </div>
+      </ion-col>
+      <ion-col text-center>
+        <fa-icon [icon]="['fas', 'arrows-alt-h']" size="2x" class="fabp"></fa-icon>
+      </ion-col>
+      <ion-col>
+        <div text-center>
+          {{paciente.mcadera}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="val">
+    <ion-row>
+      <ion-col text-right>
+        <button class="btni" ion-button icon-start aria-label="Índice Cintura Cadera" data-balloon-pos="right">
+          <fa-icon [icon]="['far', 'question-circle']" style="font-size: 0.99rem;"></fa-icon>
+        </button>
+        &nbsp;&nbsp;ICC
+      </ion-col>
+      <ion-col>
+        <div text-left>
+          {{paciente.icc}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="val1">
+    <ion-row>
+      <ion-col text-right>
+        <button class="btni" ion-button icon-start aria-label="Masa Musculo Esquelético" data-balloon-pos="right">
+          <fa-icon [icon]="['far', 'question-circle']" style="font-size: 0.99rem;"></fa-icon>
+        </button>
+        &nbsp;MME
+      </ion-col>
+      <ion-col>
+        <div text-left>
+          {{paciente.mme}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card class="val2">
+    <ion-row>
+      <ion-col text-right>
+        <button class="btni" ion-button icon-start aria-label="Porcentaje Grasa Corporal" data-balloon-pos="right">
+          <fa-icon [icon]="['far', 'question-circle']" style="font-size: 0.99rem;"></fa-icon>
+        </button>
+        &nbsp;PGC
+      </ion-col>
+      <ion-col>
+        <div text-left>
+          {{paciente.pgc}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

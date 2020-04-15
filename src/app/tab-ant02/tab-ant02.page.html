@@ -1,0 +1,151 @@
+<ion-content>
+  <ion-card class="cd">
+    <p text-center style="color:#145a69;">{{paciente.name}} {{paciente.lastname}}<br />
+      <fa-icon [icon]="['fas', 'weight']" class="fabp"></fa-icon> &nbsp;{{paciente.weight | number: '1.1-1'}}
+      Kg / {{paciente.weight*2.2 | number: '1.1-1'}} Lb
+    </p>
+  </ion-card>
+  <ion-card class="cd" style="background: transparent;">
+    <ion-row>
+      <ion-col size="3" text-center>
+        <ion-card class="val" style="width: 100%;padding: 0px;">
+          <ion-row>
+            <ion-col>
+              {{cat_person}}
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <div>
+          <img src="assets/imgs/{{img_imc}}" style="height: 50%;width: auto;">
+        </div>
+      </ion-col>
+      <ion-col size="9" text-center>
+        <ion-card class="val">
+          <ion-row text-center>
+            <ion-col text-center>
+              {{imc_name}}
+            </ion-col>
+          </ion-row>
+        </ion-card>
+
+        <ion-card class="val2" style="font-weight: lighter; font-size: 0.9rem;">
+          <ion-row>
+            <ion-col>
+              Obs.
+            </ion-col>
+            <ion-col>
+              Peso mínimo
+            </ion-col>
+            <ion-col>
+              Peso ideal
+            </ion-col>
+            <ion-col>
+              Peso máximo
+            </ion-col>
+          </ion-row>
+        </ion-card>
+
+        <ion-card class="val1" style="font-weight: lighter; font-size: 0.9rem;">
+          <ion-row>
+            <ion-col>
+              Kg
+            </ion-col>
+            <ion-col>
+              {{peso_min | number: '1.2-2'}}
+            </ion-col>
+            <ion-col>
+              {{peso_ideal | number: '1.2-2'}}
+            </ion-col>
+            <ion-col>
+              {{peso_max | number: '1.2-2'}}
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <ion-card class="val1" style="font-weight: lighter; font-size: 0.9rem;">
+          <ion-row>
+            <ion-col>
+              Lb
+            </ion-col>
+            <ion-col>
+              {{(peso_min * 2.20) | number: '1.2-2'}}
+            </ion-col>
+            <ion-col>
+              {{(peso_ideal * 2.20) | number: '1.2-2'}}
+            </ion-col>
+            <ion-col>
+              {{(peso_max * 2.20)| number: '1.2-2'}}
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <ion-card class="val">
+          <ion-row text-center>
+            <ion-col text-center>
+              CONSIDERACIONES
+            </ion-col>
+          </ion-row>
+        </ion-card>
+
+        <ion-card class="cd" style="font-weight: lighter; font-size: 0.9rem;color:#145a69;">
+          <ion-row>
+            <ion-col>
+              DIFF.[Kg]
+            </ion-col>
+            <ion-col>
+              {{diff_peso_min | number: '1.2-2'}}
+              <fa-icon [icon]="diff_peso_min >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+                class="{{diff_peso_min<0?'fadw':'faup'}}"> </fa-icon>
+            </ion-col>
+            <ion-col>
+              {{diff_peso_ideal | number: '1.2-2'}}
+              <fa-icon [icon]="diff_peso_ideal >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+                class="{{diff_peso_ideal<0?'fadw':'faup'}}"> </fa-icon>
+            </ion-col>
+            <ion-col>
+              {{diff_peso_max | number: '1.2-2'}}
+              <fa-icon [icon]="diff_peso_max >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+                class="{{diff_peso_max<0?'fadw':'faup'}}"> </fa-icon>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <ion-card class="cd" style="font-weight: lighter; font-size: 0.9rem;color:#145a69;">
+          <ion-row>
+            <ion-col>
+              DIFF.[Lb]
+            </ion-col>
+            <ion-col>
+              {{(diff_peso_min * 2.20)| number: '1.2-2'}}
+              <fa-icon [icon]="diff_peso_min >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+                class="{{diff_peso_min<0?'fadw':'faup'}}"> </fa-icon>
+            </ion-col>
+            <ion-col>
+              {{(diff_peso_ideal * 2.20)| number: '1.2-2'}}
+              <fa-icon [icon]="diff_peso_ideal >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+                class="{{diff_peso_ideal<0?'fadw':'faup'}}"> </fa-icon>
+            </ion-col>
+            <ion-col>
+              {{(diff_peso_max * 2.20)| number: '1.2-2'}}
+              <fa-icon [icon]="diff_peso_max >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+                class="{{diff_peso_max<0?'fadw':'faup'}}"> </fa-icon>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+  <ion-card class="cd">
+    <ion-row>
+
+    </ion-row>
+
+  </ion-card>
+
+  <ion-card class="cd">
+    <ion-row>
+
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>

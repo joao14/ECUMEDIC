@@ -1,0 +1,50 @@
+:host {}
+
+ion-slide {
+    //display: block !important;
+    /* position: relative;
+    top: 50%;
+    transform: translate(0, -50%) !important;*/
+
+    .slide-img {
+        //margin-top: 20%;
+
+        img {
+            width: 60%;
+            height: auto;
+        }
+    }
+
+    .slide-title {
+        font-weight: bolder !important;
+        color: #20a99f !important;
+    }
+
+    .slide-description {
+        color: #145a69 !important;
+        width: 70%;
+        text-align: center;
+        display: inline-flex;
+    }
+}
+
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: visible !important;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+h1 {
+    margin-bottom: 2px;   
+}
+
+h5 {
+    font-size: 12px;
+    padding-right: 22%;
+    color: #444444;
+    text-align: right;
+    margin-top: 2px;
+}
