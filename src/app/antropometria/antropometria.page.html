@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title text-center>Antropométria</ion-title>
+    <ion-title class="ion-text-center">Antropométria</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,6 +21,11 @@
       <ion-tab-button tab="tab2" style="background: #d2d6de;">
         <fa-icon [icon]="['fas','street-view']" size="2x"></fa-icon>
         <ion-label>Estado</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab3" style="background: #d2d6de;">
+        <fa-icon [icon]="['fas','chart-bar']" size="2x"></fa-icon>
+        <ion-label>Gráficos</ion-label>
       </ion-tab-button>
 
     </ion-tab-bar>

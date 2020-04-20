@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' },
   { path: 'paymentdonemodal', loadChildren: './modals/paymentdonemodal/paymentdonemodal.module#PaymentdonemodalPageModule' },
   { path: 'antropometria', loadChildren: './antropometria/antropometria.module#AntropometriaPageModule' },
+  // { path: 'tab-ant03', loadChildren: './tab-ant03/tab-ant03.module#TabAnt03PageModule' },
   // { path: 'tab1', loadChildren: './tab-ant01/tab-ant01.module#TabAnt01PageModule' },
   // { path: 'tab2', loadChildren: './tab-ant02/tab-ant02.module#TabAnt02PageModule' },
 ];

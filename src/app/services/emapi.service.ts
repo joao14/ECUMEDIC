@@ -1,8 +1,10 @@
+import { SeriesResponse } from './../models/series-response';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { LoginResponse } from '../models/login-response';
+import { Credencial } from '../models/credencial';
 
 @Injectable({
   providedIn: 'root'
@@ -40,10 +42,34 @@ export class EmapiService {
       'Something bad happened; please try again later.');
   };
 
-  /** Call Login  */
-  callLogin(credencial): Observable<LoginResponse> {
+  /**
+   * Call Login
+   * @param credencial 
+   */
+  callLogin(credencial: Credencial): Observable<LoginResponse> {
     return this.http
       .post<LoginResponse>(this.URL_BASE + '/loginp', JSON.stringify(credencial), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  /**
+   * Call Series
+   * @param numeident 
+   * @param token 
+   */
+  callSeries(numeident: string, token: string): Observable<SeriesResponse> {
+    let opt = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    }
+
+    return this.http
+      .get<SeriesResponse>(this.URL_BASE + '/chart/series/' + numeident, opt)
       .pipe(
         retry(2),
         catchError(this.handleError)

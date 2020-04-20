@@ -13,14 +13,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-//import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-// library.add(fas, far, fab);
-// dom.watch();
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2GoogleChartsModule, GoogleChartsSettings } from 'ng2-google-charts';
 import { CallNumber } from '@ionic-native/call-number/ngx';
+// import { Chart } from 'chart.js';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,7 +33,9 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     PaymentdonemodalPageModule,
     CalldocmodalPageModule,
     VideocallPageModule,
-    HttpClientModule],
+    HttpClientModule,
+    Ng2GoogleChartsModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -1,0 +1,60 @@
+<ion-content>
+  <!-- <ion-card class="cd">
+    <p class="ion-text-center" style="color:#145a69;">Paciente<br />{{paciente.name}} {{paciente.lastname}}</p>
+  </ion-card> -->
+
+  <ion-card class="welcome-card">
+    <ion-card-header class="cd">
+      <ion-card-subtitle class="ion-text-center" style="color:#145a69;">EVOLUCION PESO [Kg]</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content style="padding: 0px;">
+      <google-chart [data]="pesoChart" style="width: 100%;"></google-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header class="cd">
+      <ion-card-subtitle class="ion-text-center" style="color:#145a69;">EVOLUCION TALLA [cm]</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <google-chart [data]="tallaChart"></google-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header class="cd">
+      <ion-card-subtitle class="ion-text-center" style="color:#145a69;">EVOLUCION ÍNDICE MASA CORPORAL [IMC]</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <google-chart [data]="imcChart"></google-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header class="cd">
+      <ion-card-subtitle class="ion-text-center" style="color:#145a69;">EVOLUCION MASA MUSCULO ESQUELETICO [MME]</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <google-chart [data]="mmeChart"></google-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="welcome-card">
+    <ion-card-header class="cd">
+      <ion-card-subtitle class="ion-text-center" style="color:#145a69;">EVOLUCION PORCENTAJE GRASA CORPORAL [PGC]</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <google-chart [data]="pgcChart"></google-chart>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-card class="welcome-card">
+    <ion-card-header class="cd">
+      <ion-card-subtitle class="ion-text-center" style="color:#145a69;">EVOLUCION PESO [Kg]</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content style="padding: 0px;">
+      <div style="display: block"><canvas id="yudhatp-chart"></canvas></div>
+    </ion-card-content>
+  </ion-card> -->
+
+</ion-content>

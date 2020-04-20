@@ -31,6 +31,15 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'tab3',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab-ant03/tab-ant03.module#TabAnt03PageModule'
+          }
+        ]
+      },
     ]
   },
   {
