@@ -1,52 +1,574 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="doctorlist"></ion-back-button>
+      <ion-back-button defaultHref="findclinic"></ion-back-button>
     </ion-buttons>
-    <ion-title text-center class="double-title">
-      <h5>Health</h5>
-      <p>Clinic</p>
-    </ion-title>
+    <ion-title text-center>Tabla Alimentos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="header-container">
-    <img src="assets/imgs/header-nav.svg" alt="">
-  </div>
-  <div class="top-btns-holder" text-center>
-    <ion-row>
-      <ion-col size="4" class="btns-col">
-        <ion-button>
-          <img src="assets/imgs/phone-call.svg" alt="">
-        </ion-button>
-      </ion-col>
-      <ion-col size="4" id="top-pic-holder">
-        <img src="assets/imgs/clinicpic.png" alt="">
-      </ion-col>
-      <ion-col size="4" class="btns-col">
-        <ion-button>
-          <img src="assets/imgs/speech-bubble.svg" alt="">
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </div>
-  <div class="ratings-d" text-center>
-    <p> <span> <img src="assets/imgs/star.svg" alt=""></span> 4.2 <span id="num">(200 evaluations)</span> </p>
-  </div>
-  <div class="description-holder" text-center padding>
-    <div class="desc-card" text-center padding>
-      <p>The Clinic is a specialist in cardiac surgery. has more than 5 thousand employees specializes in several areas
-        of health
-      </p>
-    </div>
-  </div>
+  <ion-slides pager="true" (ionSlideDidChange)="onSlideChange()" #slidess>
+    <ion-slide>
+      <ion-slide>
+        <div style="width: 100%;" class="animated pulse" [ngClass]="animate">
+          <ion-card>
+            <table style="border: solid 1px;width: 100%;text-align: left;" class="padding-table-columns">
+              <tr class="tht">
+                <th colspan="4" class="ion-text-center">{{indexs}} Almidones, Cereales y Leguminosas</th>
+              </tr>
+              <tr>
+                <th rowspan="14" style="width: 10%;"><span class="rs">1/2 taza</span> </th>
+                <td style="width: 40%;">Soya</td>
+                <th rowspan="4" style="width: 10%;"><span class="rs">2 cdas</span></th>
+                <td tyle="width: 40%;">Granola</td>
+              </tr>
+              <tr>
+                <td>Arveja o Judías</td>
+                <td>Germen de trigo</td>
+              </tr>
+              <tr>
+                <td>Frejol</td>
+                <td>Avena</td>
+              </tr>
+              <tr>
+                <td>Haba</td>
+                <td>Harinas</td>
+              </tr>
+              <tr>
+                <td>Chocho</td>
+                <th>1 tz</th>
+                <td>Canguil</td>
+              </tr>
+              <tr>
+                <td>Habichuelas</td>
+                <th rowspan="2"><span class="rs">1 rod</span></th>
+                <td>Pan de molde integral</td>
+              </tr>
+              <tr>
+                <td>Quinoa</td>
+                <td>Pan de molde blanco</td>
+              </tr>
+              <tr>
+                <td>Mote</td>
+                <th rowspan="3"><span class="rs">1/2 u</span></th>
+                <td>Pan de agua</td>
+              </tr>
+              <tr>
+                <td>Arroz</td>
+                <td>Pan integral</td>
+              </tr>
+              <tr>
+                <td>Fideo</td>
+                <td>Pan centeno</td>
+              </tr>
+              <tr>
+                <td>Yuca</td>
+                <th rowspan="3"><span class="rs">1/4 u med</span></th>
+                <td>Verde</td>
+              </tr>
+              <tr>
+                <td>Camote</td>
+                <td>Maduro</td>
+              </tr>
+              <tr>
+                <td>Zanahoria blanca</td>
+                <td>Maqueño</td>
+              </tr>
+              <tr>
+                <td>Mellocos</td>
+                <th rowspan="2"><span class="rs">6 u peq</span></th>
+                <td>Galletas</td>
+              </tr>
+              <tr>
+                <th rowspan="2"><span class="rs">1/4 taza</span></th>
+                <td>
+                  Garbanzo</td>
+                <td>Galletas integrales</td>
+              </tr>
+              <tr>
+                <td>Lenteja</td>
+                <th rowspan="2"><span class="rs">1u peq</span></th>
+                <td>Papa</td>
+              </tr>
+              <tr>
+                <td colspan="2" tyle="width: 50%;">3 cdas de Maíz tostado</td>
+                <td>Choclo</td>
+              </tr>
+            </table>
+          </ion-card>
+          <ion-card>
+            <ion-card-header>
+              Recomendaciones
+            </ion-card-header>
+            <ion-card-content text-left>
+              Recomendaciones
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-slide>
+    </ion-slide>
+    <!-- CARNICOS -->
+    <ion-slide>
+      <div style="width: 100%;" [ngClass]="animate">
+        <ion-card>
+          <table style="border: solid 1px;width: 100%;text-align: left;" class="padding-table-columns">
+            <tr class="tht">
+              <th colspan="6" class="ion-text-center">{{indexs}} Cárnicos</th>
+            </tr>
+            <tr>
+              <th rowspan="2" style="width: 10%;"><span class="rs">1u</span></th>
+              <th rowspan="2" style="width: 10%;"><span class="rs">Huevo</span></th>
+              <td style="width: 30%;">Duro</td>
+              <th rowspan="2" style="width: 10%;"><span class="rs">1 oz</span></th>
+              <th rowspan="8"><span class="rs">alto colesterol</span></th>
+              <td style="width: 30%;">Cuy</td>
+            </tr>
+            <tr>
+              <td>Tibio</td>
+              <td>Viceras</td>
+            </tr>
+            <tr>
+              <th rowspan="6"><span class="rs">1 rodaja</span></th>
+              <th rowspan="6"><span class="rs">Queso</span></th>
+              <td>Tierno</td>
+              <th rowspan="3"><span class="rs">5 u</span></th>
+              <td>Camarones</td>
+            </tr>
+            <tr>
+              <td>Fresco</td>
+              <td>Conchas</td>
+            </tr>
+            <tr>
+              <td>Ricotta</td>
+              <td>Mejillones</td>
+            </tr>
+            <tr>
+              <td>Mesa</td>
+              <th><span class="rs">2 u</span></th>
+              <td>Cangrejo</td>
+            </tr>
+            <tr>
+              <td>Mozzarella</td>
+              <th><span class="rs">3 u</span></th>
+              <td>Langostino</td>
+            </tr>
+            <tr>
+              <td>Maduros</td>
+              <th><span class="rs">1/2 u</span></th>
+              <td>Langosta</td>
+            </tr>
+            <tr>
+              <th rowspan="7"><span class="rs">1 oz</span></th>
+              <th rowspan="4"><span class="rs">carnes blancas</span></th>
+              <td>Pescado</td>
+              <th rowspan="6"><span class="rs">1 u</span></th>
+              <th rowspan="8"><span class="rs">embutidos</span></th>
+              <td>Salchicha</td>
+            </tr>
+            <tr>
+              <td>Pollo</td>
+              <td>Jamón</td>
+            </tr>
+            <tr>
+              <td>Pavo</td>
+              <td>Mortadela</td>
+            </tr>
+            <tr>
+              <td>Cerdo</td>
+              <td>Queso de chancho</td>
+            </tr>
+            <tr>
+              <th rowspan="3"><span class="rs">carnes rojas</span></th>
+              <td>Ternera</td>
+              <td>Chorizo</td>
+            </tr>
+            <tr>
+              <td>Res</td>
+              <td>Morcilla</td>
+            </tr>
+            <tr>
+              <td>Borrego</td>
+              <th rowspan="2" class="thv ion-text-center">2 u</th>
+              <td>Salami</td>
+            </tr>
+            <tr>
+              <th><span class="rs">1 lat</span></th>
+              <th rowspan="4"><span class="rs">enlatados</span></th>
+              <td>Atún</td>
+              <td>Peperoni</td>
+            </tr>
+            <tr>
+              <th rowspan="3"><span class="rs">1/2 lat</span></th>
+              <td>Sardina</td>
+              <td rowspan="3" colspan="3" style="background-color: #f1f1f1;"></td>
+            </tr>
+            <tr>
+              <td>
+                Anchoas
+              </td>
+            </tr>
+            <tr>
+              <td>Mariscos</td>
+            </tr>
+          </table>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            Recomendaciones
+          </ion-card-header>
+          <ion-card-content text-left>
+            Recomendaciones
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <!-- FRUTAS -->
+    <ion-slide>
+      <div style="width: 100%;" [ngClass]="animate">
+        <ion-card>
+          <table style="border: solid 1px;width: 100%;text-align: justify;" class="padding-table-columns">
+            <tr class="tht">
+              <th colspan="4" class="ion-text-center">{{indexs}} Frutas</th>
+            </tr>
+            <tr>
+              <th rowspan="6"><span class="rs">1 taza</span></th>
+              <td>Piña</td>
+              <th rowspan="11"><span class="rs">2 u</span></th>
+              <td>
+                Taxo
+              </td>
+            </tr>
+            <tr>
+              <td>Sandia</td>
+              <td>Naranjilla</td>
+            </tr>
+            <tr>
+              <td>Melón</td>
+              <td>Maracuyá</td>
+            </tr>
+            <tr>
+              <td>Babaco</td>
+              <td>Granadilla</td>
+            </tr>
+            <tr>
+              <td>Frutilla</td>
+              <td>Mandarina</td>
+            </tr>
+            <tr>
+              <td>Papaya</td>
+              <td>Claudia</td>
+            </tr>
+            <tr>
+              <th rowspan="7"><span class="rs">1 u med</span></th>
+              <td>Naranja</td>
+              <td>Kiwi</td>
+            </tr>
+            <tr>
+              <td>Pepino dulce</td>
+              <td>Arándano</td>
+            </tr>
+            <tr>
+              <td>Pera</td>
+              <td>Higo</td>
+            </tr>
+            <tr>
+              <td>Guayaba</td>
+              <td>Tuna</td>
+            </tr>
+            <tr>
+              <td>Durazno</td>
+              <td>*Ciruelas pasas</td>
+            </tr>
+            <tr>
+              <td>*Manzana</td>
+              <th rowspan="2"><span class="rs">2 cdas</span></th>
+              <td>Tamarindo</td>
+            </tr>
+            <tr>
+              <td>*Mamey</td>
+              <td>*Pasas</td>
+            </tr>
+            <tr>
+              <th rowspan="7"><span class="rs">1/2 taza</span></th>
+              <td>Cereza</td>
+              <th><span class="rs">12 u</span></th>
+              <td>*Uvas</td>
+            </tr>
+            <tr>
+              <td>Mora</td>
+              <th rowspan="5"><span class="rs">1 u peq</span></th>
+              <td>*Guineo</td>
+            </tr>
+            <tr>
+              <td>Frambuesa</td>
+              <td>*Zapote</td>
+            </tr>
+            <tr>
+              <td>Grosella</td>
+              <td>*Chirimoya</td>
+            </tr>
+            <tr>
+              <td>Hobos</td>
+              <td>*Orito</td>
+            </tr>
+            <tr>
+              <td>*Capuli</td>
+              <td>*Mango</td>
+            </tr>
+            <tr>
+              <td>*Guanábana</td>
+              <td colspan="2">1/2 u grande de Toronja</td>
+            </tr>
+            <tr>
+              <th rowspan="2"><span class="rs">1 grande</span></th>
+              <td>Lima</td>
+              <td colspan="2">6 pepitas de Guaba</td>
+            </tr>
+            <tr>
+              <td>Tomate de árbol</td>
+              <td colspan="2" style="background-color: #f1f1f1;"></td>
+            </tr>
+          </table>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            Recomendaciones
+          </ion-card-header>
+          <ion-card-content text-left>
+            Recomendaciones
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <!-- VERDURAS -->
+    <ion-slide>
+      <div style="width: 100%;" [ngClass]="animate">
+        <ion-card>
+          <table style="border: solid 1px;width: 100%;text-align: justify;" class="padding-table-columns">
+            <tr class="tht ion-text-center">
+              <th colspan="2">{{indexs}} Verduras</th>
+            </tr>
+            <tr>
+              <td>Champiñones</td>
+              <td>Suquini</td>
+            </tr>
+            <tr>
+              <td>Espárragos</td>
+              <td>Palmito</td>
+            </tr>
+            <tr>
+              <td>Acelga</td>
+              <td>Rábano</td>
+            </tr>
+            <tr>
+              <td>Rúcula</td>
+              <td>Vainita</td>
+            </tr>
+            <tr>
+              <td>Espinaca</td>
+              <td>Zanahoria amarilla</td>
+            </tr>
+            <tr>
+              <td>Albahaca</td>
+              <td>Berenjena</td>
+            </tr>
+            <tr>
+              <td>Pimientos</td>
+              <td>Remolacha</td>
+            </tr>
+            <tr>
+              <td>Apio</td>
+              <td>Nabo</td>
+            </tr>
+            <tr>
+              <td>Pepinillo</td>
+              <td>Brócoli</td>
+            </tr>
+            <tr>
+              <td>Lechuga</td>
+              <td>Coles de bruselas</td>
+            </tr>
+            <tr>
+              <td>Cebolla</td>
+              <td>Col</td>
+            </tr>
+            <tr>
+              <td>Tomate</td>
+              <td>Coliflor</td>
+            </tr>
+            <tr>
+              <td colspan="2">Verduras crudas: 1 taza</td>
+            </tr>
+            <tr>
+              <td colspan="2">Verduras cocidas: 1/2 taza</td>
+            </tr>
+          </table>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            Recomendaciones
+          </ion-card-header>
+          <ion-card-content text-left>
+            Recomendaciones
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <!-- AZUCARES -->
+    <ion-slide>
+      <div style="width: 100%;" [ngClass]="animate">
+        <ion-card>
+          <table style="border: solid 1px;width: 100%;text-align: justify;" class="padding-table-columns">
+            <tr class="tht ion-text-center">
+              <th colspan="4">{{indexs}} Azúcares</th>
+            </tr>
+            <tr>
+              <th rowspan="3"><span class="rs">cdita</span></th>
+              <td>Miel de abeja</td>
+              <th rowspan="4"><span class="rs">1 cdita</span></th>
+              <td>Azúcar morena</td>
+            </tr>
+            <tr>
+              <td>Miel de maple</td>
+              <td>Panela</td>
+            </tr>
+            <tr>
+              <td>Azúcar blanca</td>
+              <td>Mermelada</td>
+            </tr>
+            <tr>
+              <td colspan="2" style="background-color: #f1f1f1;"></td>
+              <td>Mermelada light</td>
+            </tr>
+          </table>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            Recomendaciones
+          </ion-card-header>
+          <ion-card-content text-left>
+            Recomendaciones
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <!-- GRASAS -->
+    <ion-slide>
+      <div style="width: 100%;" [ngClass]="animate">
+        <ion-card>
+          <table style="border: solid 1px;width: 100%;text-align: justify;" class="padding-table-columns">
+            <tr class="tht ion-text-center">
+              <th colspan="4">{{indexs}} Grasas</th>
+            </tr>
+            <tr>
+              <td rowspan="2">5 u</td>
+              <td>Maní</td>
+              <td rowspan="4">1 cdita</td>
+              <td>Aceite de oliva</td>
+            </tr>
+            <tr>
+              <td>Almendra</td>
+              <td>Aceite de ajonjolí</td>
+            </tr>
+            <tr>
+              <td rowspan="2">3 u</td>
+              <td>Nueces</td>
+              <td>Aceite de canola</td>
+            </tr>
+            <tr>
+              <td>Pistachos</td>
+              <td>Aceite de girasol</td>
+            </tr>
+            <tr>
+              <td rowspan="2">1 cda</td>
+              <td>Semillas</td>
+              <td colspan="2" style="background-color: #f1f1f1;"></td>
+            </tr>
+            <tr>
+              <td>Coco</td>
+              <td rowspan="3">1 cdita</td>
+              <td>*Mantequilla</td>
+            </tr>
+            <tr>
+              <td>3 u</td>
+              <td>Aceitunas</td>
+              <td>*Margarina</td>
+            </tr>
+            <tr>
+              <td>1/4 u</td>
+              <td>Aguacate</td>
+              <td>*Manteca/td>
+            </tr>
+          </table>
+
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            Recomendaciones
+          </ion-card-header>
+          <ion-card-content text-left>
+            Recomendaciones
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <!-- LACTEOS -->
+    <ion-slide>
+      <div style="width: 100%;" [ngClass]="animate">
+        <ion-card>
+          <table style="border: solid 1px;width: 100%;text-align: justify;" class="padding-table-columns">
+            <tr class="tht">
+              <th colspan="3" class="ion-text-center">{{indexs}} Lácteos</th>
+            </tr>
+            <tr>
+              <th rowspan="6" style="width: 10%;-webkit-transform: rotate(-90deg);"> 1 taza</th>
+              <th rowspan="2" style="width: 40%;">Yogurt</th>
+              <td style="width: 50%;" class="tachado">
+                <ion-icon ios="ios-close" md="md-close"></ion-icon>
+                natural
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>semidescremado
+              </td>
+            </tr>
+            <tr>
+              <th rowspan="4">Leche</th>
+              <td>entera</td>
+            </tr>
+            <tr>
+              <td>semidescremada</td>
+            </tr>
+            <tr>
+              <td>descremada</td>
+            </tr>
+            <tr>
+              <td>deslactosada</td>
+            </tr>
+            <tr>
+              <td colspan="3">2 cdas de leche en polvo</td>
+            </tr>
+          </table>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>
+            Recomendaciones
+          </ion-card-header>
+          <ion-card-content text-left>
+            Recomendaciones
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
 
-<ion-footer padding-horizontal no-border>
+<!-- <ion-footer padding-horizontal no-border>
   <ion-toolbar>
     <ion-button (click)="schedule()" expand="block">
       SCHEDULE EXAM
     </ion-button>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->

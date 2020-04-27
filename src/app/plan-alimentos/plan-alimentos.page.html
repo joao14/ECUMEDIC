@@ -1,0 +1,42 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Plan de Alimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" selectedTab="tab1" style="background: #d2d6de;">
+
+      <ion-tab-button tab="tab1" style="background: #d2d6de;">
+        <fa-icon [icon]="['fas','coffee']" size="2x"></fa-icon>
+        <ion-label>Desayuno</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab2" style="background: #d2d6de;">
+        <fa-icon [icon]="['far','clock']" size="2x"></fa-icon>
+        <ion-label>Mañana</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab3" style="background: #d2d6de;">
+        <fa-icon [icon]="['fas','utensils']" size="2x"></fa-icon>
+        <ion-label>Almuerzo</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab4" style="background: #d2d6de;">
+        <fa-icon [icon]="['fas','clock']" size="2x"></fa-icon>
+        <ion-label>Tarde</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab5" style="background: #d2d6de;">
+        <fa-icon [icon]="['fas','concierge-bell']" size="2x"></fa-icon>
+        <ion-label>Cena</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+</ion-content>

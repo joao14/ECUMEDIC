@@ -7,15 +7,24 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./findclinic.page.scss'],
 })
 export class FindclinicPage implements OnInit {
-  
-  constructor(private navCTrl:NavController) { }
+
+  constructor(private navCTrl: NavController) { }
 
   ngOnInit() {
   }
 
-  goClinicDetails()
-  {
-    this.navCTrl.navigateForward('clinicdetails');
+  goOption(op: number) {
+    switch (op) {
+      case 1:
+        this.navCTrl.navigateForward('clinicdetails');
+        break;
+      case 2:
+        this.navCTrl.navigateForward('plan-alimentos');
+        break;
+      default:
+        break;
+    }
+
   }
 
 }

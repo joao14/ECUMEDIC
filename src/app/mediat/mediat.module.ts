@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FindclinicPage } from './findclinic.page';
+import { MediatPage } from './mediat.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 const routes: Routes = [
   {
     path: '',
-    component: FindclinicPage
+    component: MediatPage
   }
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [FindclinicPage]
+  declarations: [MediatPage]
 })
-export class FindclinicPageModule {}
+export class MediatPageModule { }

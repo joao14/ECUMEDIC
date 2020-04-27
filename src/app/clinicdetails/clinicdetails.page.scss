@@ -1,11 +1,39 @@
-ion-footer
-{
-    ion-toolbar{
+ion-footer {
+    ion-toolbar {
         --background: white;
-        ion-button{
+
+        ion-button {
             margin-bottom: 20px !important;
             font-size: 1.2rem !important;
         }
     }
-    
+
+}
+
+table,
+th,
+td {
+    border: 1px solid var(--ion-color-light-shade);
+    border-collapse: collapse;
+    padding: 2px;
+}
+
+.tachado {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+
+.rs {
+    writing-mode: vertical-lr;
+    -ms-writing-mode: tb-rl;
+    transform: rotate(180deg);
+}
+
+.swiper-pagination-bullets {
+    position: fixed !important;
+}
+
+.tht {
+    color: #444444;
+    background: #d7d8da;
 }
