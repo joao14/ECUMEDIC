@@ -11,7 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 export class FindclinicPage implements OnInit {  
   
   constructor(private navCTrl:NavController) { }
-   
+
   ngOnInit() {  
   }
 

@@ -22,7 +22,7 @@ export interface Foods {
   styleUrls: ['./findfood.page.scss'],
 })
 export class FindfoodPage implements OnInit {
-  
+
   public foods: Array<Food> = [];
 
   constructor() { }

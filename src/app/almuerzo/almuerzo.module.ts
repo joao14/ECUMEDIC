@@ -5,25 +5,25 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FindclinicPage } from './findclinic.page';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AlmuerzoPage } from './almuerzo.page';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 
 const routes: Routes = [
   {
     path: '',
-    component: FindclinicPage
+    component: AlmuerzoPage
   }
 ];
 
 @NgModule({
   imports: [
-    FontAwesomeModule,
     CommonModule,
     FontAwesomeModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [FindclinicPage]
+  declarations: [AlmuerzoPage]
 })
-export class FindclinicPageModule {}
+export class AlmuerzoPageModule { }

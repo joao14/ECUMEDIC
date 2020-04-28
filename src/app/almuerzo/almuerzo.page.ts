@@ -2,34 +2,25 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 
 @Component({
-  selector: 'app-clinicdetails',
-  templateUrl: './clinicdetails.page.html',
-  styleUrls: ['./clinicdetails.page.scss'],
+  selector: 'app-almuerzo',
+  templateUrl: './almuerzo.page.html',
+  styleUrls: ['./almuerzo.page.scss'],
 })
-export class ClinicdetailsPage implements OnInit {
+export class AlmuerzoPage implements OnInit {
   @ViewChild('slidess', { static: true })
   slides: IonSlides;
   animate: any;
-  public indexs: string = 1 + "/7";
-  public taal = new Map();
-
-  constructor() {
-    this.taal.set('0100', true);
-    this.taal.set('0101', false);
-
-  }
+  /** Obtener size del array de desayubos*/
+  public indexs: string = 1 + "/2";
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  schedule() {
-    console.log("scheduled");
   }
 
   onSlideChange() {
     this.slides.getActiveIndex()
       .then(index => {
-        this.indexs = (index + 1) + "/7";
+        this.indexs = (index + 1) + "/2";
         console.log('pag. ' + this.indexs);
         console.log(index);
         if (index != 0) {
@@ -50,4 +41,5 @@ export class ClinicdetailsPage implements OnInit {
       console.log(this.animate + "over");
     }, 2000);
   }
+
 }

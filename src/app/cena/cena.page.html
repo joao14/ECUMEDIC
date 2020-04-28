@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-card class="cd">
+    <p class="ion-text-center" style="color:#145a69;">
+      <fa-icon [icon]="['fas', 'concierge-bell']" class="fabf"></fa-icon>&nbsp;Cena
+    </p>
+  </ion-card>
+  <ion-card class="cd">
+    <ion-card-subtitle class="st">
+      Glosario:
+    </ion-card-subtitle>
+    <ion-row class="glos">
+      <ion-col class="glos" col-6><span class="sp">L:&nbsp;</span>Lacteos</ion-col>
+      <ion-col class="glos" col-6><span class="sp">A:&nbsp;</span>Almidones</ion-col>
+    </ion-row>
+    <ion-row class="glos">
+      <ion-col class="glos" col-6><span class="sp">C:&nbsp;</span>Carnicos</ion-col>
+      <ion-col class="glos" col-6><span class="sp">F:&nbsp;</span>Frutas</ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card class="val1" style="font-size: 0.90rem;">
+    <p class="ion-text-center">
+      <fa-icon [icon]="['far', 'clipboard']" class="fabf"></fa-icon>&nbsp;Opción&nbsp;{{indexs}}
+    </p>
+  </ion-card>
+  <ion-card class="cd" style="background: transparent;">
+    <ion-slides pager="true" (ionSlideDidChange)="onSlideChange()" #slidess>
+      <ion-slide *ngFor="let desa of desayuno" class="sop">
+        <div style="width: 100%;">
+          <ion-row><span class="sp">L:&nbsp;</span>{{desa.lacteo}}</ion-row>
+          <ion-row><span class="sp">A:&nbsp;</span>{{desa.almidon}}</ion-row>
+          <ion-row><span class="sp">C:&nbsp;</span>{{desa.carnico}}</ion-row>
+          <ion-row><span class="sp">F:&nbsp;</span>{{desa.fruta}}</ion-row>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+  <ion-card class="val1">
+    <p class="ion-text-justify" style="padding-left: 10px;font-size: 0.90rem;">
+      <fa-icon [icon]="['fas', 'asterisk']" class="fabf"></fa-icon>&nbsp;Recomendaciones:
+    </p>
+  </ion-card>
+  <ion-card class="cd">
+    ABCD
+  </ion-card>
+</ion-content>
