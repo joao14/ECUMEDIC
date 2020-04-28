@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'paymentdonemodal', loadChildren: './modals/paymentdonemodal/paymentdonemodal.module#PaymentdonemodalPageModule' },
   { path: 'antropometria', loadChildren: './antropometria/antropometria.module#AntropometriaPageModule' },
   { path: 'plan-alimentos', loadChildren: './plan-alimentos/plan-alimentos.module#PlanAlimentosPageModule' },
+  { path: 'planreco', loadChildren: './modals/planreco/planreco.module#PlanrecoPageModule' },
   // { path: 'desayuno', loadChildren: './desayuno/desayuno.module#DesayunoPageModule' },
   // { path: 'mediam', loadChildren: './mediam/mediam.module#MediamPageModule' },
   // { path: 'mediat', loadChildren: './mediat/mediat.module#MediatPageModule' },

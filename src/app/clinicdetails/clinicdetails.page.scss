@@ -1,14 +1,14 @@
-ion-footer {
-    ion-toolbar {
-        --background: white;
+// ion-footer {
+//     ion-toolbar {
+//       //  --background: white;
 
-        ion-button {
-            margin-bottom: 20px !important;
-            font-size: 1.2rem !important;
-        }
-    }
+//         ion-button {
+//             margin-bottom: 20px !important;
+//             font-size: 1.2rem !important;
+//         }
+//     }
 
-}
+// }
 
 table,
 th,
@@ -36,4 +36,12 @@ td {
 .tht {
     color: #444444;
     background: #d7d8da;
+}
+
+.g {
+    color: green;
+}
+
+.r {
+    color: red;
 }

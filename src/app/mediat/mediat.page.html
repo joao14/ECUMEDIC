@@ -4,7 +4,7 @@
       <fa-icon [icon]="['fas', 'clock']" class="fabf"></fa-icon>&nbsp;Media Tarde
     </p>
   </ion-card>
-  <ion-card class="cd">
+  <!-- <ion-card class="cd">
     <ion-card-subtitle class="st">
       Glosario:
     </ion-card-subtitle>
@@ -16,31 +16,39 @@
       <ion-col class="glos" col-6><span class="sp">C:&nbsp;</span>Carnicos</ion-col>
       <ion-col class="glos" col-6><span class="sp">F:&nbsp;</span>Frutas</ion-col>
     </ion-row>
-  </ion-card>
+  </ion-card> -->
 
   <ion-card class="val1" style="font-size: 0.90rem;">
     <p class="ion-text-center">
-      <fa-icon [icon]="['far', 'clipboard']" class="fabf"></fa-icon>&nbsp;Opción&nbsp;{{indexs}}
+      <fa-icon [icon]="['far', 'clipboard']" class="fabf"></fa-icon>&nbsp;opciones
     </p>
   </ion-card>
   <ion-card class="cd" style="background: transparent;">
-    <ion-slides pager="true" (ionSlideDidChange)="onSlideChange()" #slidess>
-      <ion-slide *ngFor="let desa of desayuno" class="sop">
+    <ion-list>
+      <ion-item *ngFor="let mt of plan.mt" class="sop" style="padding: 0px;">
         <div style="width: 100%;">
-          <ion-row><span class="sp">L:&nbsp;</span>{{desa.lacteo}}</ion-row>
-          <ion-row><span class="sp">A:&nbsp;</span>{{desa.almidon}}</ion-row>
-          <ion-row><span class="sp">C:&nbsp;</span>{{desa.carnico}}</ion-row>
-          <ion-row><span class="sp">F:&nbsp;</span>{{desa.fruta}}</ion-row>
+          <span class="sp">*&nbsp;</span>{{mt.paalCanmmmt}} {{mt.paalMedia}}
         </div>
-      </ion-slide>
-    </ion-slides>
+      </ion-item>
+    </ion-list>
   </ion-card>
-  <ion-card class="val1">
-    <p class="ion-text-justify" style="padding-left: 10px;font-size: 0.90rem;">
-      <fa-icon [icon]="['fas', 'asterisk']" class="fabf"></fa-icon>&nbsp;Recomendaciones:
+  <!-- <ion-card class="cd">
+    <p class="ion-text-center" style="color:#145a69;">
+      <fa-icon [icon]="['fas', 'clock']" class="fabf"></fa-icon>&nbsp;Media Tarde
+    </p>
+  </ion-card> -->
+  <!-- <ion-card class="val1" style="font-size: 0.90rem;">
+    <p class="ion-text-center">
+      <fa-icon [icon]="['fas', 'clock']" class="fabf"></fa-icon>&nbsp;Media Tarde
     </p>
   </ion-card>
-  <ion-card class="cd">
-    ABCD
-  </ion-card>
+  <ion-card class="cd" style="background: transparent;">
+    <ion-list>
+      <ion-item *ngFor="let mm of plan.mm" class="sop" style="padding: 0px;">
+        <div style="width: 100%;">
+          <span class="sp">*&nbsp;</span>{{mm.paalCanmmmt}} {{mm.paalMedia}}
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card> -->
 </ion-content>

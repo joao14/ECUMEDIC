@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { Data } from '../models/planalim-response';
 
 @Component({
   selector: 'app-almuerzo',
@@ -10,9 +11,12 @@ export class AlmuerzoPage implements OnInit {
   @ViewChild('slidess', { static: true })
   slides: IonSlides;
   animate: any;
-  /** Obtener size del array de desayubos*/
-  public indexs: string = 1 + "/2";
-  constructor() { }
+  indexs: string;
+  plan: Data;
+  constructor() {
+    this.plan = JSON.parse(localStorage.getItem('plan-a'));
+    this.indexs = 1 + "/" + this.plan.almuerzo.length;
+  }
 
   ngOnInit() {
   }
@@ -20,9 +24,7 @@ export class AlmuerzoPage implements OnInit {
   onSlideChange() {
     this.slides.getActiveIndex()
       .then(index => {
-        this.indexs = (index + 1) + "/2";
-        console.log('pag. ' + this.indexs);
-        console.log(index);
+        this.indexs = (index + 1) + "/" + this.plan.almuerzo.length;
         if (index != 0) {
           this.switchAnimates()
         }
@@ -35,10 +37,8 @@ export class AlmuerzoPage implements OnInit {
 
   switchAnimates() {
     this.animate = "animated pulse"
-    console.log(this.animate + "beg");
     setTimeout(() => {
       this.animate = "";
-      console.log(this.animate + "over");
     }, 2000);
   }
 

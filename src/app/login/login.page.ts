@@ -51,32 +51,61 @@ export class LoginPage implements OnInit {
     let serie: SeriesResponse;
     serie = JSON.parse(drs);
     localStorage.setItem('series', JSON.stringify(serie.data));
-    this.navCtrl.navigateRoot('home');
-    return;
+    // this.navCtrl.navigateRoot('home');
+    // return;
     /** ens Only for test */
 
     console.log(JSON.stringify(this.credencial));
-    // this.emApiService.callLogin(this.credencial).subscribe((response) => {
-    //   if (response.headerApp.code === 200) {
-    //     this.infog.loginr = response;
-    //     localStorage.setItem('lresponse', JSON.stringify(response.data.paciente));
-    //     console.log(' >>>' + response.data.token);
-    //     this.emApiService.callSeries(this.credencial.pass, response.data.token).subscribe((rseries) => {
-    //       if (rseries.headerApp.code === 200) {
-    //         console.log('>>> ' + JSON.stringify(rseries.data));
-    //         localStorage.setItem('series', JSON.stringify(rseries.data));
-    //       } else {
-    //         /** Presentar mensaje de error */
-    //         console.log('Error call series');
-    //       }
-    //     });
+    // 0.0 Call Login
+    this.emApiService.callLogin(this.credencial).subscribe((response) => {
+      if (response.headerApp.code === 200) {
+        this.infog.loginr = response;
+        localStorage.setItem('lresponse', JSON.stringify(response.data.paciente));
+        console.log('>>> ' + JSON.stringify(response.data.paciente));
+        console.log('>>> ' + response.data.paciente.lastconsid);
+        // 1.0 Call Series
+        this.emApiService.callSeries(this.credencial.pass, response.data.token).subscribe((rseries) => {
+          if (rseries.headerApp.code === 200) {
+            console.log('>>> ' + JSON.stringify(rseries.data));
+            localStorage.setItem('series', JSON.stringify(rseries.data));
+          } else {
+            /** Presentar mensaje de error */
+            console.log('Error call series');
+          }
+        });
 
-    //     this.navCtrl.navigateRoot('home');
-    //   } else {
-    //     /** Presentar mensaje de error */
-    //     console.log('Error autenticación');
-    //   }
-    // });
+        if (response.data.paciente.lastconsid) {
+          // 2.0 Call Tabla Alimentos
+          this.emApiService.callTableFood(response.data.paciente.lastconsid, response.data.token).subscribe((rtf) => {
+            if (rtf.headerApp.code === 200) {
+              console.log('>>> ' + JSON.stringify(rtf.data));
+              localStorage.setItem('tabla-a', JSON.stringify(rtf.data));
+            } else {
+              /** Presentar mensaje de error */
+              console.log('Error call table');
+            }
+          });
+
+          // 3.0 Call Plan Alimentos
+          this.emApiService.callPlanFood(response.data.paciente.lastconsid, response.data.token).subscribe((rpf) => {
+            if (rpf.headerApp.code === 200) {
+              console.log('DATA PLAN >>>> ' + JSON.stringify(rpf.data));
+              localStorage.setItem('plan-a', JSON.stringify(rpf.data));
+            } else {
+              /** Presentar mensaje de error */
+              console.log('Error call plan');
+            }
+          });
+        } else {
+          localStorage.setItem('tabla-a', null);
+          localStorage.setItem('plan-a', null);
+        }
+        this.navCtrl.navigateRoot('home');
+      } else {
+        /** Presentar mensaje de error */
+        console.log('Error autenticación');
+      }
+    });
 
   }
 

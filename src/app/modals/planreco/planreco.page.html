@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Plan de Alimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="val1">
+    <p class="ion-text-center" style="padding-left: 10px;font-size: 0.90rem;">
+      <fa-icon [icon]="['fas', 'asterisk']" class="fabf"></fa-icon>&nbsp;Recomendaciones&nbsp;<fa-icon
+        [icon]="['fas', 'asterisk']" class="fabf"></fa-icon>
+    </p>
+  </ion-card>
+  <ion-card class="cd ion-text-justify sop" style="background: transparent;">
+    <div style="font-size: 0.90rem;" [innerHTML]="'<p>' + recomendacion + '</p>'"></div>
+  </ion-card>
+  <div class="ion-text-center">
+    <ion-button color="primary" (click)="closeModal()">
+      Aceptar
+    </ion-button>
+  </div>
+</ion-content>
+
+<ion-footer style="height: 43px;">
+  <ion-toolbar>
+    <ion-title style="font-size: 0.7rem !important;text-align: center; padding-bottom: 10px;">
+      <fa-icon [icon]="['fas', 'phone']" class="fabf"></fa-icon>&nbsp;<fa-icon [icon]="['fab', 'whatsapp']"
+        class="fabf"></fa-icon> +593 99 821 8429 |
+      <fa-icon [icon]="['fas', 'envelope']" class="fabf"></fa-icon>&nbsp;&nbsp;nathyysal@gmail.com
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -9,11 +9,14 @@
       Glosario:
     </ion-card-subtitle>
     <ion-row class="glos">
-      <ion-col class="glos" col-6><span class="sp">L:&nbsp;</span>Lacteos</ion-col>
       <ion-col class="glos" col-6><span class="sp">A:&nbsp;</span>Almidones</ion-col>
+      <ion-col class="glos" col-6><span class="sp">C:&nbsp;</span>Carnicos</ion-col>
     </ion-row>
     <ion-row class="glos">
-      <ion-col class="glos" col-6><span class="sp">C:&nbsp;</span>Carnicos</ion-col>
+      <ion-col class="glos" col-6><span class="sp">V:&nbsp;</span>Verduras</ion-col>
+      <ion-col class="glos" col-6><span class="sp">G:&nbsp;</span>Grasas</ion-col>
+    </ion-row>
+    <ion-row class="glos">
       <ion-col class="glos" col-6><span class="sp">F:&nbsp;</span>Frutas</ion-col>
     </ion-row>
   </ion-card>
@@ -25,22 +28,21 @@
   </ion-card>
   <ion-card class="cd" style="background: transparent;">
     <ion-slides pager="true" (ionSlideDidChange)="onSlideChange()" #slidess>
-      <ion-slide *ngFor="let desa of desayuno" class="sop">
+      <ion-slide *ngFor="let ce of plan.cena" class="sop">
         <div style="width: 100%;">
-          <ion-row><span class="sp">L:&nbsp;</span>{{desa.lacteo}}</ion-row>
-          <ion-row><span class="sp">A:&nbsp;</span>{{desa.almidon}}</ion-row>
-          <ion-row><span class="sp">C:&nbsp;</span>{{desa.carnico}}</ion-row>
-          <ion-row><span class="sp">F:&nbsp;</span>{{desa.fruta}}</ion-row>
+          <ion-row class="rs"><span class="sp">A:&nbsp;</span>{{ce.paalcanalmidon}} {{ce.paalAlmidon}}</ion-row>
+          <ion-row class="rs"><span class="sp">C:&nbsp;</span>{{ce.paalCancarnico}} {{ce.paalCarnico}}</ion-row>
+          <ion-row class="rs"><span class="sp">V:&nbsp;</span>{{ce.paalCanverdura}} {{ce.paalVerdura}}</ion-row>
+          <ion-row class="rs"><span class="sp">G:&nbsp;</span>{{ce.paalCangrasa}} {{ce.paalGrasa}}</ion-row>
+          <ion-row class="rs"><span class="sp">F:&nbsp;</span>{{ce.paalCanfruta}} {{ce.paalFruta}}</ion-row>
         </div>
       </ion-slide>
     </ion-slides>
   </ion-card>
-  <ion-card class="val1">
+  <!-- <ion-card class="val1">
     <p class="ion-text-justify" style="padding-left: 10px;font-size: 0.90rem;">
       <fa-icon [icon]="['fas', 'asterisk']" class="fabf"></fa-icon>&nbsp;Recomendaciones:
     </p>
-  </ion-card>
-  <ion-card class="cd">
-    ABCD
-  </ion-card>
+  </ion-card> -->
+
 </ion-content>

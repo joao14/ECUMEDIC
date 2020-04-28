@@ -1,3 +1,4 @@
+import { PlanrecoPageModule } from './modals/planreco/planreco.module';
 import { VideocallPageModule } from './modals/videocall/videocall.module';
 import { CalldocmodalPageModule } from './modals/calldocmodal/calldocmodal.module';
 import { PaymentdonemodalPageModule } from './modals/paymentdonemodal/paymentdonemodal.module';
@@ -33,6 +34,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     PaymentdonemodalPageModule,
     CalldocmodalPageModule,
     VideocallPageModule,
+    PlanrecoPageModule,
     HttpClientModule,
     Ng2GoogleChartsModule
   ],

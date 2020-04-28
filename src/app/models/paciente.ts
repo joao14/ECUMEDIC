@@ -15,6 +15,7 @@ export interface Ages {
 
 export class Paciente {
     profession: string;
+    lastconsid: number;
     gender: string;
     mme: number;
     mcadera: number;
@@ -33,4 +34,16 @@ export class Paciente {
     ages: Ages;
     email: string;
     imc: number;
+    /**info tabla alimentos */
+    recoacl: string;
+    recoazu: string;
+    recocar: string;
+    recofru: string;
+    recogra: string;
+    recolac: string;
+    recover: string;
+    /**info plan alimentos */
+    planreco: string;
+    planacfi: string;
+    planagua: string;
 }

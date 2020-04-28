@@ -1,3 +1,5 @@
+import { PlanalimResponse } from './../models/planalim-response';
+import { TablealimResponse } from './../models/tablealim-response';
 import { SeriesResponse } from './../models/series-response';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -70,6 +72,49 @@ export class EmapiService {
 
     return this.http
       .get<SeriesResponse>(this.URL_BASE + '/chart/series/' + numeident, opt)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+
+  /**
+  * Call Tabla Alimentos
+  * @param consId 
+  * @param token 
+  */
+  callTableFood(consId: number, token: string): Observable<TablealimResponse> {
+    let opt = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    }
+
+    return this.http
+      .get<TablealimResponse>(this.URL_BASE + '/ta/' + consId, opt)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  /**
+ * Call Plan Alimentos
+ * @param consId 
+ * @param token 
+ */
+  callPlanFood(consId: number, token: string): Observable<PlanalimResponse> {
+    let opt = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    }
+
+    return this.http
+      .get<PlanalimResponse>(this.URL_BASE + '/pa/' + consId, opt)
       .pipe(
         retry(2),
         catchError(this.handleError)

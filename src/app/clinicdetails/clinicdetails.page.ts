@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { Data } from '../models/tablealim-response';
+import { Paciente } from '../models/paciente';
 
 @Component({
   selector: 'app-clinicdetails',
@@ -11,12 +13,26 @@ export class ClinicdetailsPage implements OnInit {
   slides: IonSlides;
   animate: any;
   public indexs: string = 1 + "/7";
-  public taal = new Map();
 
+  tabla: Map<string, boolean>;
+  recoacl: string;
+  recoazu: string;
+  recocar: string;
+  recofru: string;
+  recogra: string;
+  recolac: string;
+  recover: string;
   constructor() {
-    this.taal.set('0100', true);
-    this.taal.set('0101', false);
-
+    let tb: Data = JSON.parse(localStorage.getItem('tabla-a'));
+    this.tabla = tb.table;
+    let paciente: Paciente = JSON.parse(localStorage.getItem('lresponse'));
+    this.recoacl = paciente.recoacl;
+    this.recoazu = paciente.recoazu;
+    this.recocar = paciente.recocar;
+    this.recofru = paciente.recofru;
+    this.recogra = paciente.recogra;
+    this.recolac = paciente.recolac;
+    this.recover = paciente.recover;
   }
 
   ngOnInit() {

@@ -102,7 +102,7 @@
               Recomendaciones
             </ion-card-header>
             <ion-card-content text-left>
-              Recomendaciones
+              {{recoacl}}
             </ion-card-content>
           </ion-card>
         </div>
@@ -218,7 +218,7 @@
             Recomendaciones
           </ion-card-header>
           <ion-card-content text-left>
-            Recomendaciones
+            {{recocar}}
           </ion-card-content>
         </ion-card>
       </div>
@@ -336,7 +336,7 @@
             Recomendaciones
           </ion-card-header>
           <ion-card-content text-left>
-            Recomendaciones
+            {{recofru}}
           </ion-card-content>
         </ion-card>
       </div>
@@ -410,7 +410,7 @@
             Recomendaciones
           </ion-card-header>
           <ion-card-content text-left>
-            Recomendaciones
+            {{recover}}
           </ion-card-content>
         </ion-card>
       </div>
@@ -448,7 +448,7 @@
             Recomendaciones
           </ion-card-header>
           <ion-card-content text-left>
-            Recomendaciones
+            {{recoazu}}
           </ion-card-content>
         </ion-card>
       </div>
@@ -508,7 +508,7 @@
             Recomendaciones
           </ion-card-header>
           <ion-card-content text-left>
-            Recomendaciones
+            {{recogra}}
           </ion-card-content>
         </ion-card>
       </div>
@@ -524,14 +524,15 @@
             <tr>
               <th rowspan="6" style="width: 10%;-webkit-transform: rotate(-90deg);"> 1 taza</th>
               <th rowspan="2" style="width: 40%;">Yogurt</th>
-              <td style="width: 50%;" class="tachado">
-                <ion-icon ios="ios-close" md="md-close"></ion-icon>
+              <td style="width: 50%;" [class]="tabla['0161'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0161'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0161']?'md-checkmark':'md-close'" [class]="tabla['0161']? 'g':'r'"></ion-icon>
                 natural
               </td>
             </tr>
             <tr>
               <td>
-                <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>semidescremado
+                semidescremado
               </td>
             </tr>
             <tr>
@@ -548,7 +549,11 @@
               <td>deslactosada</td>
             </tr>
             <tr>
-              <td colspan="3">2 cdas de leche en polvo</td>
+              <td colspan="3" [class]="tabla['0167'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0167'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0167']?'md-checkmark':'md-close'" [class]="tabla['0167']? 'g':'r'"></ion-icon>2 cdas de
+                leche en polvo
+              </td>
             </tr>
           </table>
         </ion-card>
@@ -557,7 +562,7 @@
             Recomendaciones
           </ion-card-header>
           <ion-card-content text-left>
-            Recomendaciones
+            {{recolac}}
           </ion-card-content>
         </ion-card>
       </div>
@@ -572,3 +577,12 @@
     </ion-button>
   </ion-toolbar>
 </ion-footer> -->
+<ion-footer style="height: 43px;">
+  <ion-toolbar>
+    <ion-title style="font-size: 0.7rem !important;text-align: center; padding-bottom: 10px;">
+      <fa-icon [icon]="['fas', 'phone']" class="fabf"></fa-icon>&nbsp;<fa-icon [icon]="['fab', 'whatsapp']"
+        class="fabf"></fa-icon> +593 99 821 8429 |
+      <fa-icon [icon]="['fas', 'envelope']" class="fabf"></fa-icon>&nbsp;&nbsp;nathyysal@gmail.com
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
