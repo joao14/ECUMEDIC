@@ -31,8 +31,7 @@ const routes: Routes = [
   // { path: 'mediat', loadChildren: './mediat/mediat.module#MediatPageModule' },
   // { path: 'almuerzo', loadChildren: './almuerzo/almuerzo.module#AlmuerzoPageModule' },
   // { path: 'cena', loadChildren: './cena/cena.module#CenaPageModule' },
-  { path: 'findfood', loadChildren: './findclinic/findfood/findfood.module#FindfoodPageModule' },
-
+  // { path: 'findfood', loadChildren: './findclinic/findfood/findfood.module#FindfoodPageModule' },
   // { path: 'tab-ant03', loadChildren: './tab-ant03/tab-ant03.module#TabAnt03PageModule' },
   // { path: 'tab1', loadChildren: './tab-ant01/tab-ant01.module#TabAnt01PageModule' },
   // { path: 'tab2', loadChildren: './tab-ant02/tab-ant02.module#TabAnt02PageModule' },
