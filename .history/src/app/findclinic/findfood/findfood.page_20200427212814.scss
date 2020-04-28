@@ -1,0 +1,68 @@
+.contenedor_principal {
+  margin-left: 7px;
+  margin-right: -4px;
+}
+.titulo {
+  background-color: #c9eeff;
+  margin-right: 9px;
+  font-weight: bold;
+  height: 35px;
+}
+
+.cell_aliments {
+  background-color: #00acba;
+  color: white;
+  margin-bottom: 5px;
+  position: relative; 
+}
+
+.cell_aliments_one {
+    background-color: #00acba;
+    color: white;
+    margin-bottom: 5px;
+    position: relative; 
+    margin-right: 10px;
+  }
+
+.lbl_product {
+  margin-left: 5px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.cell_meter {
+  background-color: #cefbff;
+  color: black;
+  margin-top: 3px;
+  position: relative;
+  font-weight: bold;
+}
+
+.cell_two {
+  background-color: #ffebce;
+  color: black;
+  margin-top: 3px;
+  margin-right: 5px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.cell_three {
+  background-color: #ffebce;
+  color: black;
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cell_aliments_contenido {
+  margin-top: -8px;
+  margin-left: -5px;
+}
+
+.recomendaciones{
+    color: #00acba;
+    font-weight: bold;
+}
