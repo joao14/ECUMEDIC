@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' },
   { path: 'paymentdonemodal', loadChildren: './modals/paymentdonemodal/paymentdonemodal.module#PaymentdonemodalPageModule' },
   { path: 'antropometria', loadChildren: './antropometria/antropometria.module#AntropometriaPageModule' },
-<<<<<<< HEAD
   { path: 'plan-alimentos', loadChildren: './plan-alimentos/plan-alimentos.module#PlanAlimentosPageModule' },
   { path: 'planreco', loadChildren: './modals/planreco/planreco.module#PlanrecoPageModule' },
   // { path: 'desayuno', loadChildren: './desayuno/desayuno.module#DesayunoPageModule' },
@@ -32,10 +31,8 @@ const routes: Routes = [
   // { path: 'mediat', loadChildren: './mediat/mediat.module#MediatPageModule' },
   // { path: 'almuerzo', loadChildren: './almuerzo/almuerzo.module#AlmuerzoPageModule' },
   // { path: 'cena', loadChildren: './cena/cena.module#CenaPageModule' },
-=======
   { path: 'findfood', loadChildren: './findclinic/findfood/findfood.module#FindfoodPageModule' },
 
->>>>>>> c3c52ae98f9e6d35851da4bb2189920a539bc0e7
   // { path: 'tab-ant03', loadChildren: './tab-ant03/tab-ant03.module#TabAnt03PageModule' },
   // { path: 'tab1', loadChildren: './tab-ant01/tab-ant01.module#TabAnt01PageModule' },
   // { path: 'tab2', loadChildren: './tab-ant02/tab-ant02.module#TabAnt02PageModule' },
