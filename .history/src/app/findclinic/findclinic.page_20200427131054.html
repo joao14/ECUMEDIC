@@ -1,0 +1,106 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center>Menú Plan Nutricional</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--<div class="header-container">
+    <img src="assets/imgs/header-nav.svg" alt="">
+  </div>-->
+  <div class="list-menu">
+    <div class="cat-menu">
+      <ion-grid>
+        <ion-row class="cat-row ion-text-center">
+          <!--Alimentos-->
+          <ion-col size="5" class="cat-col">
+            <ion-button class="ion-text-center" fill="none" expand="block" (click)="goFindFood()">
+              <ion-label>
+                <fa-icon
+                  [icon]="['fas', 'street-view']"
+                  size="2x"
+                  class="fab"
+                ></fa-icon>
+                <p class="tblo ion-text-wrap">Alimentos</p>
+              </ion-label>
+            </ion-button>
+          </ion-col>
+          <!--Plan-->
+          <ion-col size="5" class="cat-col"> 
+            <ion-button class="ion-text-center" fill="none" expand="block" (click)="goFindPlan()>
+              <ion-label>
+                <fa-icon
+                  [icon]="['fas', 'utensils']"
+                  size="2x"
+                  class="fab"
+                ></fa-icon>
+                <p class="ion-text-wrap">Plan</p>
+              </ion-label>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="cat-row ion-text-center">
+          <!--Menu de alimentos-->
+          <ion-col size="5" class="cat-col">
+            <ion-button class="ion-text-center" fill="none" expand="block">
+              <ion-label>
+                <fa-icon
+                  [icon]="['fas', 'street-view']"
+                  size="2x"
+                  class="fab"
+                ></fa-icon>
+                <p class="tblo ion-text-wrap">Menu</p>
+              </ion-label>
+            </ion-button>
+          </ion-col>
+          <!--Detox-->
+          <ion-col size="5" class="cat-col">
+            <ion-button class="ion-text-center" fill="none" expand="block">
+              <ion-label>
+                <fa-icon
+                  [icon]="['fas', 'utensils']"
+                  size="2x"
+                  class="fab"
+                ></fa-icon>
+                <p class="ion-text-wrap">Detox</p>
+              </ion-label>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="cat-row ion-text-center">
+          <!--Agua-->
+          <ion-col size="5" class="cat-col">
+            <ion-button class="ion-text-center" fill="none" expand="block">
+              <ion-label>
+                <fa-icon
+                  [icon]="['fas', 'street-view']"
+                  size="2x"
+                  class="fab"
+                ></fa-icon>
+                <p class="tblo ion-text-wrap">Agua</p>
+              </ion-label>
+            </ion-button>
+          </ion-col>
+          <!--Ejercicio-->
+          <ion-col size="5" class="cat-col">
+            <ion-button class="ion-text-center" fill="none" expand="block">
+              <ion-label>
+                <fa-icon
+                  [icon]="['fas', 'utensils']"
+                  size="2x"
+                  class="fab"
+                ></fa-icon>
+                <p class="ion-text-wrap">Ejercicio</p>
+              </ion-label>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Comidas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid *ngFor="let food of foods">
+    <ion-row>
+      <ion-col col-auto text-center class="cell-class">
+        <div>
+          {{food.title}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let aliments of food.food">
+      <ion-col *ngIf="aliments.aliment != ''" class="cell-class" size="3">
+        <div>
+          {{aliments.aliment}}
+        </div>
+      </ion-col>
+      <ion-col>
+        <ion-row *ngFor="let ingredient of aliments.ingredients">
+          <ion-col text-center class="cell-class">
+            <div>
+              {{ingredient.meter}}
+            </div>
+          </ion-col>
+          <ion-col class="cell-class">
+            <ion-row *ngFor="let type of ingredient.types">
+              {{type}}
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
