@@ -23,7 +23,10 @@ export class PlanAlimentosPage implements OnInit {
     const modal = await this.modalController.create({
       component: PlanrecoPage,
       componentProps: {
-        "reco": this.recomendacion
+        "reco": this.recomendacion,
+        "titulo": "Plan de Alimentos",
+        "subtitulo": "Recomendaciones",
+        "op": 1
       }
     });
 

@@ -24,7 +24,7 @@ export class Paciente {
     photo: string;
     weight: number;
     dateregi: number;
-    nextdate: string;
+    nextdate: number;
     pgc: number;
     estacivi: string;
     lastname: string;

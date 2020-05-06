@@ -11,7 +11,7 @@
   <ion-slides pager="true" (ionSlideDidChange)="onSlideChange()" #slidess>
     <ion-slide>
       <ion-slide>
-        <div style="width: 100%;" class="animated pulse" [ngClass]="animate">
+        <div style="width: 100%;" class="animated pulse" [ngClass]="animate" id="one">
           <ion-card>
             <table style="border: solid 1px;width: 100%;text-align: left;" class="padding-table-columns">
               <tr class="tht">
@@ -19,81 +19,216 @@
               </tr>
               <tr>
                 <th rowspan="14" style="width: 10%;"><span class="rs">1/2 taza</span> </th>
-                <td style="width: 40%;">Soya</td>
+                <td style="width: 40%;" [class]="tabla['0001'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0001'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0001']?'md-checkmark':'md-close'" [class]="tabla['0001']? 'g':'r'"></ion-icon>
+                  Soya
+                </td>
                 <th rowspan="4" style="width: 10%;"><span class="rs">2 cdas</span></th>
-                <td tyle="width: 40%;">Granola</td>
+                <td tyle="width: 40%;" [class]="tabla['0017'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0017'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0017']?'md-checkmark':'md-close'" [class]="tabla['0017']? 'g':'r'"></ion-icon>
+                  Granola
+                </td>
               </tr>
               <tr>
-                <td>Arveja o Judías</td>
-                <td>Germen de trigo</td>
+                <td [class]="tabla['0002'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0002'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0002']?'md-checkmark':'md-close'" [class]="tabla['0002']? 'g':'r'"></ion-icon>
+                  Arveja o Judías
+                </td>
+                <td [class]="tabla['0018'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0018'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0018']?'md-checkmark':'md-close'" [class]="tabla['0018']? 'g':'r'"></ion-icon>
+                  Germen de trigo
+                </td>
               </tr>
               <tr>
-                <td>Frejol</td>
-                <td>Avena</td>
+                <td [class]="tabla['0003'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0003'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0003']?'md-checkmark':'md-close'" [class]="tabla['0003']? 'g':'r'"></ion-icon>
+                  Frejol
+                </td>
+                <td [class]="tabla['0019'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0019'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0019']?'md-checkmark':'md-close'" [class]="tabla['0019']? 'g':'r'"></ion-icon>
+                  Avena
+                </td>
               </tr>
               <tr>
-                <td>Haba</td>
-                <td>Harinas</td>
+                <td [class]="tabla['0004'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0004'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0004']?'md-checkmark':'md-close'" [class]="tabla['0004']? 'g':'r'"></ion-icon>
+                  Haba
+                </td>
+                <td [class]="tabla['0020'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0020'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0020']?'md-checkmark':'md-close'" [class]="tabla['0020']? 'g':'r'"></ion-icon>
+                  Harinas
+                </td>
               </tr>
               <tr>
-                <td>Chocho</td>
+                <td [class]="tabla['0005'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0005'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0005']?'md-checkmark':'md-close'" [class]="tabla['0005']? 'g':'r'"></ion-icon>
+                  Chocho
+                </td>
                 <th>1 tz</th>
-                <td>Canguil</td>
+                <td [class]="tabla['0021'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0021'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0021']?'md-checkmark':'md-close'" [class]="tabla['0021']? 'g':'r'"></ion-icon>
+                  Canguil
+                </td>
               </tr>
               <tr>
-                <td>Habichuelas</td>
+                <td [class]="tabla['0006'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0006'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0006']?'md-checkmark':'md-close'" [class]="tabla['0006']? 'g':'r'"></ion-icon>
+                  Habichuelas
+                </td>
                 <th rowspan="2"><span class="rs">1 rod</span></th>
-                <td>Pan de molde integral</td>
+                <td [class]="tabla['0022'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0022'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0022']?'md-checkmark':'md-close'" [class]="tabla['0022']? 'g':'r'"></ion-icon>
+                  Pan de molde integral
+                </td>
               </tr>
               <tr>
-                <td>Quinoa</td>
-                <td>Pan de molde blanco</td>
+                <td [class]="tabla['0007'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0007'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0007']?'md-checkmark':'md-close'" [class]="tabla['0007']? 'g':'r'"></ion-icon>
+                  Quinoa
+                </td>
+                <td [class]="tabla['0023'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0023'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0023']?'md-checkmark':'md-close'" [class]="tabla['0023']? 'g':'r'"></ion-icon>
+                  Pan de molde blanco
+                </td>
               </tr>
               <tr>
-                <td>Mote</td>
+                <td [class]="tabla['0008'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0008'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0008']?'md-checkmark':'md-close'" [class]="tabla['0008']? 'g':'r'"></ion-icon>
+                  Mote
+                </td>
                 <th rowspan="3"><span class="rs">1/2 u</span></th>
-                <td>Pan de agua</td>
+                <td [class]="tabla['0024'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0024'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0024']?'md-checkmark':'md-close'" [class]="tabla['0024']? 'g':'r'"></ion-icon>
+                  Pan de agua
+                </td>
               </tr>
               <tr>
-                <td>Arroz</td>
-                <td>Pan integral</td>
+                <td [class]="tabla['0009'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0009'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0009']?'md-checkmark':'md-close'" [class]="tabla['0009']? 'g':'r'"></ion-icon>
+                  Arroz
+                </td>
+                <td [class]="tabla['0025'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0025'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0025']?'md-checkmark':'md-close'" [class]="tabla['0025']? 'g':'r'"></ion-icon>
+                  Pan integral
+                </td>
               </tr>
               <tr>
-                <td>Fideo</td>
-                <td>Pan centeno</td>
+                <td [class]="tabla['0010'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0010'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0010']?'md-checkmark':'md-close'" [class]="tabla['0010']? 'g':'r'"></ion-icon>
+                  Fideo
+                </td>
+                <td [class]="tabla['0026'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0026'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0026']?'md-checkmark':'md-close'" [class]="tabla['0026']? 'g':'r'"></ion-icon>
+                  Pan centeno
+                </td>
               </tr>
               <tr>
-                <td>Yuca</td>
+                <td [class]="tabla['0011'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0011'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0011']?'md-checkmark':'md-close'" [class]="tabla['0011']? 'g':'r'"></ion-icon>
+                  Yuca
+                </td>
                 <th rowspan="3"><span class="rs">1/4 u med</span></th>
-                <td>Verde</td>
+                <td [class]="tabla['0027'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0027'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0027']?'md-checkmark':'md-close'" [class]="tabla['0027']? 'g':'r'"></ion-icon>
+                  Verde
+                </td>
               </tr>
               <tr>
-                <td>Camote</td>
-                <td>Maduro</td>
+                <td [class]="tabla['0012'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0012'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0012']?'md-checkmark':'md-close'" [class]="tabla['0012']? 'g':'r'"></ion-icon>
+                  Camote
+                </td>
+                <td [class]="tabla['0028'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0028'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0028']?'md-checkmark':'md-close'" [class]="tabla['0028']? 'g':'r'"></ion-icon>
+                  Maduro
+                </td>
               </tr>
               <tr>
-                <td>Zanahoria blanca</td>
-                <td>Maqueño</td>
+                <td [class]="tabla['0013'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0013'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0013']?'md-checkmark':'md-close'" [class]="tabla['0013']? 'g':'r'"></ion-icon>
+                  Zanahoria blanca
+                </td>
+                <td [class]="tabla['0029'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0029'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0029']?'md-checkmark':'md-close'" [class]="tabla['0029']? 'g':'r'"></ion-icon>
+                  Maqueño
+                </td>
               </tr>
               <tr>
-                <td>Mellocos</td>
+                <td [class]="tabla['0014'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0014'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0014']?'md-checkmark':'md-close'" [class]="tabla['0014']? 'g':'r'"></ion-icon>
+                  Mellocos
+                </td>
                 <th rowspan="2"><span class="rs">6 u peq</span></th>
-                <td>Galletas</td>
+                <td [class]="tabla['0030'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0030'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0030']?'md-checkmark':'md-close'" [class]="tabla['0030']? 'g':'r'"></ion-icon>
+                  Galletas
+                </td>
               </tr>
               <tr>
                 <th rowspan="2"><span class="rs">1/4 taza</span></th>
-                <td>
-                  Garbanzo</td>
-                <td>Galletas integrales</td>
+                <td [class]="tabla['0015'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0015'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0015']?'md-checkmark':'md-close'" [class]="tabla['0015']? 'g':'r'"></ion-icon>
+                  Garbanzo
+                </td>
+                <td [class]="tabla['0031'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0031'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0031']?'md-checkmark':'md-close'" [class]="tabla['0031']? 'g':'r'"></ion-icon>
+                  Galletas integrales
+                </td>
               </tr>
               <tr>
-                <td>Lenteja</td>
+                <td [class]="tabla['0016'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0016'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0016']?'md-checkmark':'md-close'" [class]="tabla['0016']? 'g':'r'"></ion-icon>
+                  Lenteja
+                </td>
                 <th rowspan="2"><span class="rs">1u peq</span></th>
-                <td>Papa</td>
+                <td [class]="tabla['0032'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0032'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0032']?'md-checkmark':'md-close'" [class]="tabla['0032']? 'g':'r'"></ion-icon>
+                  Papa
+                </td>
               </tr>
               <tr>
-                <td colspan="2" tyle="width: 50%;">3 cdas de Maíz tostado</td>
-                <td>Choclo</td>
+                <td colspan="2" tyle="width: 50%;" [class]="tabla['0034'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0034'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0034']?'md-checkmark':'md-close'" [class]="tabla['0034']? 'g':'r'"></ion-icon>
+                  3 cdas de Maíz tostado
+                </td>
+                <td [class]="tabla['0033'] ?'':'tachado'">
+                  <ion-icon [ios]="tabla['0033'] === true ?'ios-checkmark':'ios-close'"
+                    [md]="tabla['0033']?'md-checkmark':'md-close'" [class]="tabla['0033']? 'g':'r'"></ion-icon>
+                  Choclo
+                </td>
               </tr>
             </table>
           </ion-card>
@@ -119,97 +254,235 @@
             <tr>
               <th rowspan="2" style="width: 10%;"><span class="rs">1u</span></th>
               <th rowspan="2" style="width: 10%;"><span class="rs">Huevo</span></th>
-              <td style="width: 30%;">Duro</td>
+              <td style="width: 30%;" [class]="tabla['0035'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0035'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0035']?'md-checkmark':'md-close'" [class]="tabla['0035']? 'g':'r'"></ion-icon>
+                Duro
+              </td>
               <th rowspan="2" style="width: 10%;"><span class="rs">1 oz</span></th>
               <th rowspan="8"><span class="rs">alto colesterol</span></th>
-              <td style="width: 30%;">Cuy</td>
+              <td style="width: 30%;" [class]="tabla['0054'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0054'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0054']?'md-checkmark':'md-close'" [class]="tabla['0054']? 'g':'r'"></ion-icon>
+                Cuy
+              </td>
             </tr>
             <tr>
-              <td>Tibio</td>
-              <td>Viceras</td>
+              <td [class]="tabla['0036'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0036'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0036']?'md-checkmark':'md-close'" [class]="tabla['0036']? 'g':'r'"></ion-icon>
+                Tibio
+              </td>
+              <td [class]="tabla['0055'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0055'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0055']?'md-checkmark':'md-close'" [class]="tabla['0055']? 'g':'r'"></ion-icon>
+                Viceras
+              </td>
             </tr>
             <tr>
               <th rowspan="6"><span class="rs">1 rodaja</span></th>
               <th rowspan="6"><span class="rs">Queso</span></th>
-              <td>Tierno</td>
+              <td [class]="tabla['0037'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0037'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0037']?'md-checkmark':'md-close'" [class]="tabla['0037']? 'g':'r'"></ion-icon>
+                Tierno
+              </td>
               <th rowspan="3"><span class="rs">5 u</span></th>
-              <td>Camarones</td>
+              <td [class]="tabla['0056'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0056'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0056']?'md-checkmark':'md-close'" [class]="tabla['0056']? 'g':'r'"></ion-icon>
+                Camarones
+              </td>
             </tr>
             <tr>
-              <td>Fresco</td>
-              <td>Conchas</td>
+              <td [class]="tabla['0038'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0038'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0038']?'md-checkmark':'md-close'" [class]="tabla['0038']? 'g':'r'"></ion-icon>
+                Fresco
+              </td>
+              <td [class]="tabla['0057'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0057'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0057']?'md-checkmark':'md-close'" [class]="tabla['0057']? 'g':'r'"></ion-icon>
+                Conchas
+              </td>
             </tr>
             <tr>
-              <td>Ricotta</td>
-              <td>Mejillones</td>
+              <td [class]="tabla['0039'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0039'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0039']?'md-checkmark':'md-close'" [class]="tabla['0039']? 'g':'r'"></ion-icon>
+                Ricotta
+              </td>
+              <td [class]="tabla['0058'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0058'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0058']?'md-checkmark':'md-close'" [class]="tabla['0058']? 'g':'r'"></ion-icon>
+                Mejillones
+              </td>
             </tr>
             <tr>
-              <td>Mesa</td>
+              <td [class]="tabla['0040'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0040'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0040']?'md-checkmark':'md-close'" [class]="tabla['0040']? 'g':'r'"></ion-icon>
+                Mesa
+              </td>
               <th><span class="rs">2 u</span></th>
-              <td>Cangrejo</td>
+              <td [class]="tabla['0059'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0059'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0059']?'md-checkmark':'md-close'" [class]="tabla['0059']? 'g':'r'"></ion-icon>
+                Cangrejo
+              </td>
             </tr>
             <tr>
-              <td>Mozzarella</td>
+              <td [class]="tabla['0041'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0041'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0041']?'md-checkmark':'md-close'" [class]="tabla['0041']? 'g':'r'"></ion-icon>
+                Mozzarella
+              </td>
               <th><span class="rs">3 u</span></th>
-              <td>Langostino</td>
+              <td [class]="tabla['0060'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0060'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0060']?'md-checkmark':'md-close'" [class]="tabla['0060']? 'g':'r'"></ion-icon>
+                Langostino
+              </td>
             </tr>
             <tr>
-              <td>Maduros</td>
+              <td [class]="tabla['0042'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0042'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0042']?'md-checkmark':'md-close'" [class]="tabla['0042']? 'g':'r'"></ion-icon>
+                Maduros
+              </td>
               <th><span class="rs">1/2 u</span></th>
-              <td>Langosta</td>
+              <td [class]="tabla['0061'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0061'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0061']?'md-checkmark':'md-close'" [class]="tabla['0061']? 'g':'r'"></ion-icon>
+                Langosta
+              </td>
             </tr>
             <tr>
               <th rowspan="7"><span class="rs">1 oz</span></th>
               <th rowspan="4"><span class="rs">carnes blancas</span></th>
-              <td>Pescado</td>
+              <td [class]="tabla['0043'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0043'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0043']?'md-checkmark':'md-close'" [class]="tabla['0043']? 'g':'r'"></ion-icon>
+                Pescado
+              </td>
               <th rowspan="6"><span class="rs">1 u</span></th>
               <th rowspan="8"><span class="rs">embutidos</span></th>
-              <td>Salchicha</td>
+              <td [class]="tabla['0062'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0062'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0062']?'md-checkmark':'md-close'" [class]="tabla['0062']? 'g':'r'"></ion-icon>
+                Salchicha
+              </td>
             </tr>
             <tr>
-              <td>Pollo</td>
-              <td>Jamón</td>
+              <td [class]="tabla['0044'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0044'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0044']?'md-checkmark':'md-close'" [class]="tabla['0044']? 'g':'r'"></ion-icon>
+                Pollo
+              </td>
+              <td [class]="tabla['0063'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0063'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0063']?'md-checkmark':'md-close'" [class]="tabla['0063']? 'g':'r'"></ion-icon>
+                Jamón
+              </td>
             </tr>
             <tr>
-              <td>Pavo</td>
-              <td>Mortadela</td>
+              <td [class]="tabla['0045'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0045'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0045']?'md-checkmark':'md-close'" [class]="tabla['0045']? 'g':'r'"></ion-icon>
+                Pavo
+              </td>
+              <td [class]="tabla['0064'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0064'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0064']?'md-checkmark':'md-close'" [class]="tabla['0064']? 'g':'r'"></ion-icon>
+                Mortadela
+              </td>
             </tr>
             <tr>
-              <td>Cerdo</td>
-              <td>Queso de chancho</td>
+              <td [class]="tabla['0046'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0046'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0046']?'md-checkmark':'md-close'" [class]="tabla['0046']? 'g':'r'"></ion-icon>
+                Cerdo
+              </td>
+              <td [class]="tabla['0065'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0065'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0065']?'md-checkmark':'md-close'" [class]="tabla['0065']? 'g':'r'"></ion-icon>
+                Queso de chancho
+              </td>
             </tr>
             <tr>
               <th rowspan="3"><span class="rs">carnes rojas</span></th>
-              <td>Ternera</td>
-              <td>Chorizo</td>
+              <td [class]="tabla['0047'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0047'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0047']?'md-checkmark':'md-close'" [class]="tabla['0047']? 'g':'r'"></ion-icon>
+                Ternera
+              </td>
+              <td [class]="tabla['0066'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0066'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0066']?'md-checkmark':'md-close'" [class]="tabla['0066']? 'g':'r'"></ion-icon>
+                Chorizo
+              </td>
             </tr>
             <tr>
-              <td>Res</td>
-              <td>Morcilla</td>
+              <td [class]="tabla['0048'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0048'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0048']?'md-checkmark':'md-close'" [class]="tabla['0048']? 'g':'r'"></ion-icon>
+                Res
+              </td>
+              <td [class]="tabla['0067'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0067'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0067']?'md-checkmark':'md-close'" [class]="tabla['0067']? 'g':'r'"></ion-icon>
+                Morcilla
+              </td>
             </tr>
             <tr>
-              <td>Borrego</td>
+              <td [class]="tabla['0049'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0049'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0049']?'md-checkmark':'md-close'" [class]="tabla['0049']? 'g':'r'"></ion-icon>
+                Borrego
+              </td>
               <th rowspan="2" class="thv ion-text-center">2 u</th>
-              <td>Salami</td>
+              <td [class]="tabla['0068'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0068'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0068']?'md-checkmark':'md-close'" [class]="tabla['0068']? 'g':'r'"></ion-icon>
+                Salami
+              </td>
             </tr>
             <tr>
               <th><span class="rs">1 lat</span></th>
               <th rowspan="4"><span class="rs">enlatados</span></th>
-              <td>Atún</td>
-              <td>Peperoni</td>
+              <td [class]="tabla['0050'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0050'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0050']?'md-checkmark':'md-close'" [class]="tabla['0050']? 'g':'r'"></ion-icon>
+                Atún
+              </td>
+              <td [class]="tabla['0069'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0069'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0069']?'md-checkmark':'md-close'" [class]="tabla['0069']? 'g':'r'"></ion-icon>
+                Peperoni
+              </td>
             </tr>
             <tr>
               <th rowspan="3"><span class="rs">1/2 lat</span></th>
-              <td>Sardina</td>
+              <td [class]="tabla['0051'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0051'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0051']?'md-checkmark':'md-close'" [class]="tabla['0051']? 'g':'r'"></ion-icon>
+                Sardina
+              </td>
               <td rowspan="3" colspan="3" style="background-color: #f1f1f1;"></td>
             </tr>
             <tr>
-              <td>
+              <td [class]="tabla['0052'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0052'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0052']?'md-checkmark':'md-close'" [class]="tabla['0052']? 'g':'r'"></ion-icon>
                 Anchoas
               </td>
             </tr>
             <tr>
-              <td>Mariscos</td>
+              <td [class]="tabla['0053'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0053'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0053']?'md-checkmark':'md-close'" [class]="tabla['0053']? 'g':'r'"></ion-icon>
+                Mariscos
+              </td>
             </tr>
           </table>
         </ion-card>
@@ -233,100 +506,270 @@
             </tr>
             <tr>
               <th rowspan="6"><span class="rs">1 taza</span></th>
-              <td>Piña</td>
+              <td [class]="tabla['0070'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0070'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0070']?'md-checkmark':'md-close'" [class]="tabla['0070']? 'g':'r'"></ion-icon>
+                Piña
+              </td>
               <th rowspan="11"><span class="rs">2 u</span></th>
-              <td>
+              <td [class]="tabla['0092'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0092'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0092']?'md-checkmark':'md-close'" [class]="tabla['0092']? 'g':'r'"></ion-icon>
                 Taxo
               </td>
             </tr>
             <tr>
-              <td>Sandia</td>
-              <td>Naranjilla</td>
+              <td [class]="tabla['0071'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0071'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0071']?'md-checkmark':'md-close'" [class]="tabla['0071']? 'g':'r'"></ion-icon>
+                Sandia
+              </td>
+              <td [class]="tabla['0093'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0093'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0093']?'md-checkmark':'md-close'" [class]="tabla['0093']? 'g':'r'"></ion-icon>
+                Naranjilla
+              </td>
             </tr>
             <tr>
-              <td>Melón</td>
-              <td>Maracuyá</td>
+              <td [class]="tabla['0072'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0072'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0072']?'md-checkmark':'md-close'" [class]="tabla['0072']? 'g':'r'"></ion-icon>
+                Melón
+              </td>
+              <td [class]="tabla['0094'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0094'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0094']?'md-checkmark':'md-close'" [class]="tabla['0094']? 'g':'r'"></ion-icon>
+                Maracuyá
+              </td>
             </tr>
             <tr>
-              <td>Babaco</td>
-              <td>Granadilla</td>
+              <td [class]="tabla['0073'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0073'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0073']?'md-checkmark':'md-close'" [class]="tabla['0073']? 'g':'r'"></ion-icon>
+                Babaco
+              </td>
+              <td [class]="tabla['0095'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0095'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0095']?'md-checkmark':'md-close'" [class]="tabla['0095']? 'g':'r'"></ion-icon>
+                Granadilla
+              </td>
             </tr>
             <tr>
-              <td>Frutilla</td>
-              <td>Mandarina</td>
+              <td [class]="tabla['0074'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0074'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0074']?'md-checkmark':'md-close'" [class]="tabla['0074']? 'g':'r'"></ion-icon>
+                Frutilla
+              </td>
+              <td [class]="tabla['0096'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0096'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0096']?'md-checkmark':'md-close'" [class]="tabla['0096']? 'g':'r'"></ion-icon>
+                Mandarina
+              </td>
             </tr>
             <tr>
-              <td>Papaya</td>
-              <td>Claudia</td>
+              <td [class]="tabla['0075'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0075'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0075']?'md-checkmark':'md-close'" [class]="tabla['0075']? 'g':'r'"></ion-icon>
+                Papaya
+              </td>
+              <td [class]="tabla['0097'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0097'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0097']?'md-checkmark':'md-close'" [class]="tabla['0097']? 'g':'r'"></ion-icon>
+                Claudia
+              </td>
             </tr>
             <tr>
               <th rowspan="7"><span class="rs">1 u med</span></th>
-              <td>Naranja</td>
-              <td>Kiwi</td>
+              <td [class]="tabla['0076'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0076'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0076']?'md-checkmark':'md-close'" [class]="tabla['0076']? 'g':'r'"></ion-icon>
+                Naranja
+              </td>
+              <td [class]="tabla['0098'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0098'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0098']?'md-checkmark':'md-close'" [class]="tabla['0098']? 'g':'r'"></ion-icon>
+                Kiwi
+              </td>
             </tr>
             <tr>
-              <td>Pepino dulce</td>
-              <td>Arándano</td>
+              <td [class]="tabla['0077'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0077'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0077']?'md-checkmark':'md-close'" [class]="tabla['0077']? 'g':'r'"></ion-icon>
+                Pepino dulce
+              </td>
+              <td [class]="tabla['0099'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0099'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0099']?'md-checkmark':'md-close'" [class]="tabla['0099']? 'g':'r'"></ion-icon>
+                Arándano
+              </td>
             </tr>
             <tr>
-              <td>Pera</td>
-              <td>Higo</td>
+              <td [class]="tabla['0078'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0078'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0078']?'md-checkmark':'md-close'" [class]="tabla['0078']? 'g':'r'"></ion-icon>
+                Pera
+              </td>
+              <td [class]="tabla['0100'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0100'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0100']?'md-checkmark':'md-close'" [class]="tabla['0100']? 'g':'r'"></ion-icon>
+                Higo
+              </td>
             </tr>
             <tr>
-              <td>Guayaba</td>
-              <td>Tuna</td>
+              <td [class]="tabla['0079'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0079'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0079']?'md-checkmark':'md-close'" [class]="tabla['0079']? 'g':'r'"></ion-icon>
+                Guayaba
+              </td>
+              <td [class]="tabla['0101'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0101'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0101']?'md-checkmark':'md-close'" [class]="tabla['0101']? 'g':'r'"></ion-icon>
+                Tuna
+              </td>
             </tr>
             <tr>
-              <td>Durazno</td>
-              <td>*Ciruelas pasas</td>
+              <td [class]="tabla['0080'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0080'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0080']?'md-checkmark':'md-close'" [class]="tabla['0080']? 'g':'r'"></ion-icon>
+                Durazno
+              </td>
+              <td [class]="tabla['0102'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0102'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0102']?'md-checkmark':'md-close'" [class]="tabla['0102']? 'g':'r'"></ion-icon>
+                *Ciruelas pasas
+              </td>
             </tr>
             <tr>
-              <td>*Manzana</td>
+              <td [class]="tabla['0081'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0081'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0081']?'md-checkmark':'md-close'" [class]="tabla['0081']? 'g':'r'"></ion-icon>
+                *Manzana
+              </td>
               <th rowspan="2"><span class="rs">2 cdas</span></th>
-              <td>Tamarindo</td>
+              <td [class]="tabla['0103'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0103'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0103']?'md-checkmark':'md-close'" [class]="tabla['0103']? 'g':'r'"></ion-icon>
+                Tamarindo
+              </td>
             </tr>
             <tr>
-              <td>*Mamey</td>
-              <td>*Pasas</td>
+              <td [class]="tabla['0082'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0082'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0082']?'md-checkmark':'md-close'" [class]="tabla['0082']? 'g':'r'"></ion-icon>
+                *Mamey
+              </td>
+              <td [class]="tabla['0104'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0104'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0104']?'md-checkmark':'md-close'" [class]="tabla['0104']? 'g':'r'"></ion-icon>
+                *Pasas
+              </td>
             </tr>
             <tr>
               <th rowspan="7"><span class="rs">1/2 taza</span></th>
-              <td>Cereza</td>
+              <td [class]="tabla['0083'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0083'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0083']?'md-checkmark':'md-close'" [class]="tabla['0083']? 'g':'r'"></ion-icon>
+                Cereza
+              </td>
               <th><span class="rs">12 u</span></th>
-              <td>*Uvas</td>
+              <td [class]="tabla['0105'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0105'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0105']?'md-checkmark':'md-close'" [class]="tabla['0105']? 'g':'r'"></ion-icon>
+                *Uvas
+              </td>
             </tr>
             <tr>
-              <td>Mora</td>
+              <td [class]="tabla['0084'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0084'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0084']?'md-checkmark':'md-close'" [class]="tabla['0084']? 'g':'r'"></ion-icon>
+                Mora
+              </td>
               <th rowspan="5"><span class="rs">1 u peq</span></th>
-              <td>*Guineo</td>
+              <td [class]="tabla['0106'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0106'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0106']?'md-checkmark':'md-close'" [class]="tabla['0106']? 'g':'r'"></ion-icon>
+                *Guineo
+              </td>
             </tr>
             <tr>
-              <td>Frambuesa</td>
-              <td>*Zapote</td>
+              <td [class]="tabla['0085'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0085'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0085']?'md-checkmark':'md-close'" [class]="tabla['0085']? 'g':'r'"></ion-icon>
+                Frambuesa
+              </td>
+              <td [class]="tabla['0107'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0107'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0107']?'md-checkmark':'md-close'" [class]="tabla['0107']? 'g':'r'"></ion-icon>
+                *Zapote
+              </td>
             </tr>
             <tr>
-              <td>Grosella</td>
-              <td>*Chirimoya</td>
+              <td [class]="tabla['0086'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0086'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0086']?'md-checkmark':'md-close'" [class]="tabla['0086']? 'g':'r'"></ion-icon>
+                Grosella
+              </td>
+              <td [class]="tabla['0108'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0108'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0108']?'md-checkmark':'md-close'" [class]="tabla['0108']? 'g':'r'"></ion-icon>
+                *Chirimoya
+              </td>
             </tr>
             <tr>
-              <td>Hobos</td>
-              <td>*Orito</td>
+              <td [class]="tabla['0087'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0087'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0087']?'md-checkmark':'md-close'" [class]="tabla['0087']? 'g':'r'"></ion-icon>
+                Hobos
+              </td>
+              <td [class]="tabla['0109'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0109'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0109']?'md-checkmark':'md-close'" [class]="tabla['0109']? 'g':'r'"></ion-icon>
+                *Orito
+              </td>
             </tr>
             <tr>
-              <td>*Capuli</td>
-              <td>*Mango</td>
+              <td [class]="tabla['0088'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0088'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0088']?'md-checkmark':'md-close'" [class]="tabla['0088']? 'g':'r'"></ion-icon>
+                *Capuli
+              </td>
+              <td [class]="tabla['0110'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0110'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0110']?'md-checkmark':'md-close'" [class]="tabla['0110']? 'g':'r'"></ion-icon>
+                *Mango
+              </td>
             </tr>
             <tr>
-              <td>*Guanábana</td>
-              <td colspan="2">1/2 u grande de Toronja</td>
+              <td [class]="tabla['0089'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0089'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0089']?'md-checkmark':'md-close'" [class]="tabla['0089']? 'g':'r'"></ion-icon>
+                *Guanábana
+              </td>
+              <td colspan="2" [class]="tabla['0111'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0111'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0111']?'md-checkmark':'md-close'" [class]="tabla['0111']? 'g':'r'"></ion-icon>
+                1/2 u grande de Toronja
+              </td>
             </tr>
             <tr>
               <th rowspan="2"><span class="rs">1 grande</span></th>
-              <td>Lima</td>
-              <td colspan="2">6 pepitas de Guaba</td>
+              <td [class]="tabla['0090'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0090'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0090']?'md-checkmark':'md-close'" [class]="tabla['0090']? 'g':'r'"></ion-icon>
+                Lima
+              </td>
+              <td colspan="2" [class]="tabla['0112'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0112'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0112']?'md-checkmark':'md-close'" [class]="tabla['0112']? 'g':'r'"></ion-icon>
+                6 pepitas de Guaba
+              </td>
             </tr>
             <tr>
-              <td>Tomate de árbol</td>
+              <td [class]="tabla['0091'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0091'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0091']?'md-checkmark':'md-close'" [class]="tabla['0091']? 'g':'r'"></ion-icon>
+                Tomate de árbol
+              </td>
               <td colspan="2" style="background-color: #f1f1f1;"></td>
             </tr>
           </table>
@@ -350,58 +793,163 @@
               <th colspan="2">{{indexs}} Verduras</th>
             </tr>
             <tr>
-              <td>Champiñones</td>
-              <td>Suquini</td>
+              <td [class]="tabla['0113'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0113'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0113']?'md-checkmark':'md-close'" [class]="tabla['0113']? 'g':'r'"></ion-icon>
+                Champiñones
+              </td>
+              <td [class]="tabla['0125'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0125'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0125']?'md-checkmark':'md-close'" [class]="tabla['0125']? 'g':'r'"></ion-icon>
+                Suquini
+              </td>
             </tr>
             <tr>
-              <td>Espárragos</td>
-              <td>Palmito</td>
+              <td [class]="tabla['0114'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0114'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0114']?'md-checkmark':'md-close'" [class]="tabla['0114']? 'g':'r'"></ion-icon>
+                Espárragos
+              </td>
+              <td [class]="tabla['0126'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0126'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0126']?'md-checkmark':'md-close'" [class]="tabla['0126']? 'g':'r'"></ion-icon>
+                Palmito
+              </td>
             </tr>
             <tr>
-              <td>Acelga</td>
-              <td>Rábano</td>
+              <td [class]="tabla['0115'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0115'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0115']?'md-checkmark':'md-close'" [class]="tabla['0115']? 'g':'r'"></ion-icon>
+                Acelga
+              </td>
+              <td [class]="tabla['0127'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0127'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0127']?'md-checkmark':'md-close'" [class]="tabla['0127']? 'g':'r'"></ion-icon>
+                Rábano
+              </td>
             </tr>
             <tr>
-              <td>Rúcula</td>
-              <td>Vainita</td>
+              <td [class]="tabla['0116'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0116'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0116']?'md-checkmark':'md-close'" [class]="tabla['0116']? 'g':'r'"></ion-icon>
+                Rúcula
+              </td>
+              <td [class]="tabla['0128'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0128'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0128']?'md-checkmark':'md-close'" [class]="tabla['0128']? 'g':'r'"></ion-icon>
+                Vainita
+              </td>
             </tr>
             <tr>
-              <td>Espinaca</td>
-              <td>Zanahoria amarilla</td>
+              <td [class]="tabla['0117'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0117'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0117']?'md-checkmark':'md-close'" [class]="tabla['0117']? 'g':'r'"></ion-icon>
+                Espinaca
+              </td>
+              <td [class]="tabla['0129'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0129'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0129']?'md-checkmark':'md-close'" [class]="tabla['0129']? 'g':'r'"></ion-icon>
+                Zanahoria amarilla
+              </td>
             </tr>
             <tr>
-              <td>Albahaca</td>
-              <td>Berenjena</td>
+              <td [class]="tabla['0118'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0118'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0118']?'md-checkmark':'md-close'" [class]="tabla['0118']? 'g':'r'"></ion-icon>
+                Albahaca
+              </td>
+              <td [class]="tabla['0130'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0130'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0130']?'md-checkmark':'md-close'" [class]="tabla['0130']? 'g':'r'"></ion-icon>
+                Berenjena
+              </td>
             </tr>
             <tr>
-              <td>Pimientos</td>
-              <td>Remolacha</td>
+              <td [class]="tabla['0119'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0119'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0119']?'md-checkmark':'md-close'" [class]="tabla['0119']? 'g':'r'"></ion-icon>
+                Pimientos
+              </td>
+              <td [class]="tabla['0131'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0131'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0131']?'md-checkmark':'md-close'" [class]="tabla['0131']? 'g':'r'"></ion-icon>
+                Remolacha
+              </td>
             </tr>
             <tr>
-              <td>Apio</td>
-              <td>Nabo</td>
+              <td [class]="tabla['0120'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0120'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0120']?'md-checkmark':'md-close'" [class]="tabla['0120']? 'g':'r'"></ion-icon>
+                Apio
+              </td>
+              <td [class]="tabla['0132'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0132'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0132']?'md-checkmark':'md-close'" [class]="tabla['0132']? 'g':'r'"></ion-icon>
+                Nabo
+              </td>
             </tr>
             <tr>
-              <td>Pepinillo</td>
-              <td>Brócoli</td>
+              <td [class]="tabla['0121'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0121'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0121']?'md-checkmark':'md-close'" [class]="tabla['0121']? 'g':'r'"></ion-icon>
+                Pepinillo
+
+              </td>
+              <td [class]="tabla['0133'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0133'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0133']?'md-checkmark':'md-close'" [class]="tabla['0133']? 'g':'r'"></ion-icon>
+                Brócoli
+              </td>
             </tr>
             <tr>
-              <td>Lechuga</td>
-              <td>Coles de bruselas</td>
+              <td [class]="tabla['0122'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0122'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0122']?'md-checkmark':'md-close'" [class]="tabla['0122']? 'g':'r'"></ion-icon>
+                Lechuga
+              </td>
+              <td [class]="tabla['0134'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0134'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0134']?'md-checkmark':'md-close'" [class]="tabla['0134']? 'g':'r'"></ion-icon>
+                Coles de bruselas
+              </td>
             </tr>
             <tr>
-              <td>Cebolla</td>
-              <td>Col</td>
+              <td [class]="tabla['0123'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0123'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0123']?'md-checkmark':'md-close'" [class]="tabla['0123']? 'g':'r'"></ion-icon>
+                Cebolla
+              </td>
+              <td [class]="tabla['0135'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0135'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0135']?'md-checkmark':'md-close'" [class]="tabla['0135']? 'g':'r'"></ion-icon>
+                Col
+              </td>
             </tr>
             <tr>
-              <td>Tomate</td>
-              <td>Coliflor</td>
+              <td [class]="tabla['0124'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0124'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0124']?'md-checkmark':'md-close'" [class]="tabla['0124']? 'g':'r'"></ion-icon>
+                Tomate
+              </td>
+              <td [class]="tabla['0136'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0136'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0136']?'md-checkmark':'md-close'" [class]="tabla['0136']? 'g':'r'"></ion-icon>
+                Coliflor
+              </td>
             </tr>
             <tr>
-              <td colspan="2">Verduras crudas: 1 taza</td>
+              <td colspan="2" [class]="tabla['0137'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0137'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0137']?'md-checkmark':'md-close'" [class]="tabla['0137']? 'g':'r'"></ion-icon>
+                Verduras crudas: 1 taza
+              </td>
             </tr>
             <tr>
-              <td colspan="2">Verduras cocidas: 1/2 taza</td>
+              <td colspan="2" [class]="tabla['0138'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0138'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0138']?'md-checkmark':'md-close'" [class]="tabla['0138']? 'g':'r'"></ion-icon>
+                Verduras cocidas: 1/2 taza
+              </td>
             </tr>
           </table>
         </ion-card>
@@ -425,21 +973,49 @@
             </tr>
             <tr>
               <th rowspan="3"><span class="rs">cdita</span></th>
-              <td>Miel de abeja</td>
+              <td [class]="tabla['0139'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0139'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0139']?'md-checkmark':'md-close'" [class]="tabla['0139']? 'g':'r'"></ion-icon>
+                Miel de abeja
+              </td>
               <th rowspan="4"><span class="rs">1 cdita</span></th>
-              <td>Azúcar morena</td>
+              <td [class]="tabla['0142'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0142'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0142']?'md-checkmark':'md-close'" [class]="tabla['0142']? 'g':'r'"></ion-icon>
+                Azúcar morena
+              </td>
             </tr>
             <tr>
-              <td>Miel de maple</td>
-              <td>Panela</td>
+              <td [class]="tabla['0140'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0140'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0140']?'md-checkmark':'md-close'" [class]="tabla['0140']? 'g':'r'"></ion-icon>
+                Miel de maple
+              </td>
+              <td [class]="tabla['0143'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0143'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0143']?'md-checkmark':'md-close'" [class]="tabla['0143']? 'g':'r'"></ion-icon>
+                Panela
+              </td>
             </tr>
             <tr>
-              <td>Azúcar blanca</td>
-              <td>Mermelada</td>
+              <td [class]="tabla['0141'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0141'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0141']?'md-checkmark':'md-close'" [class]="tabla['0141']? 'g':'r'"></ion-icon>
+                Azúcar blanca
+              </td>
+              <td [class]="tabla['0144'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0144'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0144']?'md-checkmark':'md-close'" [class]="tabla['0144']? 'g':'r'"></ion-icon>
+                Mermelada
+              </td>
             </tr>
             <tr>
               <td colspan="2" style="background-color: #f1f1f1;"></td>
-              <td>Mermelada light</td>
+              <td [class]="tabla['0145'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0145'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0145']?'md-checkmark':'md-close'" [class]="tabla['0145']? 'g':'r'"></ion-icon>
+                Mermelada light
+              </td>
             </tr>
           </table>
         </ion-card>
@@ -463,42 +1039,102 @@
             </tr>
             <tr>
               <td rowspan="2">5 u</td>
-              <td>Maní</td>
+              <td [class]="tabla['0146'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0146'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0146']?'md-checkmark':'md-close'" [class]="tabla['0146']? 'g':'r'"></ion-icon>
+                Maní
+              </td>
               <td rowspan="4">1 cdita</td>
-              <td>Aceite de oliva</td>
+              <td [class]="tabla['0154'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0154'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0154']?'md-checkmark':'md-close'" [class]="tabla['0154']? 'g':'r'"></ion-icon>
+                Aceite de oliva
+              </td>
             </tr>
             <tr>
-              <td>Almendra</td>
-              <td>Aceite de ajonjolí</td>
+              <td [class]="tabla['0147'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0147'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0147']?'md-checkmark':'md-close'" [class]="tabla['0147']? 'g':'r'"></ion-icon>
+                Almendra
+              </td>
+              <td [class]="tabla['0155'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0155'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0155']?'md-checkmark':'md-close'" [class]="tabla['0155']? 'g':'r'"></ion-icon>
+                Aceite de ajonjolí
+              </td>
             </tr>
             <tr>
               <td rowspan="2">3 u</td>
-              <td>Nueces</td>
-              <td>Aceite de canola</td>
+              <td [class]="tabla['0148'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0148'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0148']?'md-checkmark':'md-close'" [class]="tabla['0148']? 'g':'r'"></ion-icon>
+                Nueces
+              </td>
+              <td [class]="tabla['0156'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0156'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0156']?'md-checkmark':'md-close'" [class]="tabla['0156']? 'g':'r'"></ion-icon>
+                Aceite de canola
+              </td>
             </tr>
             <tr>
-              <td>Pistachos</td>
-              <td>Aceite de girasol</td>
+              <td [class]="tabla['0149'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0149'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0149']?'md-checkmark':'md-close'" [class]="tabla['0149']? 'g':'r'"></ion-icon>
+                Pistachos
+              </td>
+              <td [class]="tabla['0157'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0157'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0157']?'md-checkmark':'md-close'" [class]="tabla['0157']? 'g':'r'"></ion-icon>
+                Aceite de girasol
+              </td>
             </tr>
             <tr>
               <td rowspan="2">1 cda</td>
-              <td>Semillas</td>
+              <td [class]="tabla['0150'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0150'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0150']?'md-checkmark':'md-close'" [class]="tabla['0150']? 'g':'r'"></ion-icon>
+                Semillas
+              </td>
               <td colspan="2" style="background-color: #f1f1f1;"></td>
             </tr>
             <tr>
-              <td>Coco</td>
+              <td [class]="tabla['0151'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0151'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0151']?'md-checkmark':'md-close'" [class]="tabla['0151']? 'g':'r'"></ion-icon>
+                Coco
+              </td>
               <td rowspan="3">1 cdita</td>
-              <td>*Mantequilla</td>
+              <td [class]="tabla['0158'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0158'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0158']?'md-checkmark':'md-close'" [class]="tabla['0158']? 'g':'r'"></ion-icon>
+                *Mantequilla
+              </td>
             </tr>
             <tr>
               <td>3 u</td>
-              <td>Aceitunas</td>
-              <td>*Margarina</td>
+              <td [class]="tabla['0152'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0152'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0152']?'md-checkmark':'md-close'" [class]="tabla['0152']? 'g':'r'"></ion-icon>
+                Aceitunas
+              </td>
+              <td [class]="tabla['0159'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0159'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0159']?'md-checkmark':'md-close'" [class]="tabla['0159']? 'g':'r'"></ion-icon>
+                *Margarina
+              </td>
             </tr>
             <tr>
               <td>1/4 u</td>
-              <td>Aguacate</td>
-              <td>*Manteca/td>
+              <td [class]="tabla['0153'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0153'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0153']?'md-checkmark':'md-close'" [class]="tabla['0153']? 'g':'r'"></ion-icon>
+                Aguacate
+              </td>
+              <td [class]="tabla['0160'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0160'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0160']?'md-checkmark':'md-close'" [class]="tabla['0160']? 'g':'r'"></ion-icon>
+                *Manteca
+              </td>
             </tr>
           </table>
 
@@ -531,22 +1167,40 @@
               </td>
             </tr>
             <tr>
-              <td>
+              <td [class]="tabla['0162'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0162'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0162']?'md-checkmark':'md-close'" [class]="tabla['0162']? 'g':'r'"></ion-icon>
                 semidescremado
               </td>
             </tr>
             <tr>
               <th rowspan="4">Leche</th>
-              <td>entera</td>
+              <td [class]="tabla['0163'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0163'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0163']?'md-checkmark':'md-close'" [class]="tabla['0163']? 'g':'r'"></ion-icon>
+                entera
+              </td>
             </tr>
             <tr>
-              <td>semidescremada</td>
+              <td [class]="tabla['0164'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0164'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0164']?'md-checkmark':'md-close'" [class]="tabla['0164']? 'g':'r'"></ion-icon>
+                semidescremada
+              </td>
             </tr>
             <tr>
-              <td>descremada</td>
+              <td [class]="tabla['0165'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0165'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0165']?'md-checkmark':'md-close'" [class]="tabla['0165']? 'g':'r'"></ion-icon>
+                descremada
+              </td>
             </tr>
             <tr>
-              <td>deslactosada</td>
+              <td [class]="tabla['0166'] ?'':'tachado'">
+                <ion-icon [ios]="tabla['0166'] === true ?'ios-checkmark':'ios-close'"
+                  [md]="tabla['0166']?'md-checkmark':'md-close'" [class]="tabla['0166']? 'g':'r'"></ion-icon>
+                deslactosada
+              </td>
             </tr>
             <tr>
               <td colspan="3" [class]="tabla['0167'] ?'':'tachado'">

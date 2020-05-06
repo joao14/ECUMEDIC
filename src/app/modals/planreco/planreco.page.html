@@ -1,16 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Plan de Alimentos</ion-title>
+    <ion-title class="ion-text-center">{{titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card class="val1">
+  <!-- recomendacion -->
+  <ion-card class="val1" *ngIf="op==1">
     <p class="ion-text-center" style="padding-left: 10px;font-size: 0.90rem;">
-      <fa-icon [icon]="['fas', 'asterisk']" class="fabf"></fa-icon>&nbsp;Recomendaciones&nbsp;<fa-icon
+      <fa-icon [icon]="['fas', 'asterisk']" class="fabf"></fa-icon>&nbsp;{{subtitulo}}&nbsp;<fa-icon
         [icon]="['fas', 'asterisk']" class="fabf"></fa-icon>
     </p>
   </ion-card>
+  <!-- agua -->
+  <ion-card class="val1" *ngIf="op==2">
+    <p class="ion-text-center" style="padding-left: 10px;font-size: 0.90rem;">
+      <fa-icon [icon]="['fas', 'glass-whiskey']" class="fabf" size="2x"></fa-icon>
+    </p>
+    <p class="ion-text-center">{{subtitulo}}</p>
+  </ion-card>
+  <!-- ejercicio -->
+  <ion-card class="val1" *ngIf="op==3">
+    <p class="ion-text-center" style="padding-left: 10px;font-size: 0.90rem;">
+      <ion-icon ios="ios-body" md="md-body" slot="start" style="zoom: 2;"></ion-icon>&nbsp;
+      <fa-icon [icon]="['fas', 'swimmer']" class="fabf" size="2x"></fa-icon>&nbsp;
+      <fa-icon [icon]="['fas', 'biking']" class="fabf" size="2x"></fa-icon>&nbsp;
+      <fa-icon [icon]="['fas', 'running']" class="fabf" size="2x"></fa-icon>&nbsp;
+      <fa-icon [icon]="['fas', 'dumbbell']" class="fabf" size="2x"></fa-icon>&nbsp;
+    </p>
+    <p class="ion-text-center">{{subtitulo}}</p>
+  </ion-card>
+
+
   <ion-card class="cd ion-text-justify sop" style="background: transparent;">
     <div style="font-size: 0.90rem;" [innerHTML]="'<p>' + recomendacion + '</p>'"></div>
   </ion-card>

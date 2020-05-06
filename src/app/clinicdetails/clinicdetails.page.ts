@@ -38,20 +38,13 @@ export class ClinicdetailsPage implements OnInit {
   ngOnInit() {
   }
 
-  schedule() {
-    console.log("scheduled");
-  }
-
   onSlideChange() {
     this.slides.getActiveIndex()
       .then(index => {
         this.indexs = (index + 1) + "/7";
-        console.log('pag. ' + this.indexs);
-        console.log(index);
         if (index != 0) {
           this.switchAnimates()
         }
-
         if (index == 6) {
           this.animate = 'animated jackInTheBox'
         }
@@ -60,10 +53,9 @@ export class ClinicdetailsPage implements OnInit {
 
   switchAnimates() {
     this.animate = "animated pulse"
-    console.log(this.animate + "beg");
     setTimeout(() => {
       this.animate = "";
-      console.log(this.animate + "over");
     }, 2000);
   }
+
 }

@@ -18,9 +18,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { HttpClientModule } from '@angular/common/http';
-import { Ng2GoogleChartsModule, GoogleChartsSettings } from 'ng2-google-charts';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { CallNumber } from '@ionic-native/call-number/ngx';
-// import { Chart } from 'chart.js';
+// import { NgCalendarModule } from 'ionic2-calendar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,6 +37,7 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     PlanrecoPageModule,
     HttpClientModule,
     Ng2GoogleChartsModule
+    // NgCalendarModule
   ],
   providers: [
     StatusBar,
@@ -49,7 +50,6 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
 export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas, far, fab);
-    // library.addIcons(faCoffee);
   }
 
 }

@@ -1,81 +1,64 @@
 <ion-header no-border>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="home"></ion-back-button>
-      </ion-buttons>
-      <ion-title text-center>Find Drugs</ion-title>
-      <ion-buttons slot="end">
-        <ion-button id="end-btn">
-          <ion-icon name="search"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <div class="header-container">
-      <img src="assets/imgs/header-nav.svg" alt="">
-    </div>
-    <div class="cat-menu">
-      <ion-grid>
-        <ion-row class="cat-row" text-center>
-          <ion-col size="5" class="cat-col" >
-            <ion-button text-center fill="none" expand="block" (click)="goDrugDetails()">
-              <ion-label>
-                <img src="assets/imgs/drug.svg" alt="">
-                <p>Drug 01</p>
-              </ion-label>
-            </ion-button>
-          </ion-col>
-          <ion-col size="5" class="cat-col">
-              <ion-button text-center fill="none" expand="block" (click)="goDrugDetails()">
-                <ion-label>
-                  <img src="assets/imgs/drug.svg" alt="">
-                  <p>Drug 02</p>
-                </ion-label>
-              </ion-button>
-            </ion-col>
-        </ion-row>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center>EcuMedic</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-        <ion-row class="cat-row" text-center>
-            <ion-col size="5" class="cat-col">
-              <ion-button text-center fill="none" expand="block" (click)="goDrugDetails()">
-                <ion-label>
-                  <img src="assets/imgs/drug.svg" alt="">
-                  <p>Drug 03</p>
-                </ion-label>
-              </ion-button>
-            </ion-col>
-            <ion-col size="5" class="cat-col">
-                <ion-button text-center fill="none" expand="block" (click)="goDrugDetails()">
-                  <ion-label>
-                    <img src="assets/imgs/drug.svg" alt="">
-                    <p>Drug 04</p>
-                  </ion-label>
-                </ion-button>
-              </ion-col>
-          </ion-row>
+<ion-content>
+  <ion-card class="val1">
+    <p class="ion-text-center" style="padding-left: 10px;font-size: 0.90rem;">
+      <fa-icon [icon]="['fas', 'notes-medical']" class="fabf" size="2x"></fa-icon>&nbsp;
+      <fa-icon [icon]="['fas', 'user-md']" class="fabf" size="2x"></fa-icon>
+    </p>
+    <p class="ion-text-center">Próximo Control
+      <!-- {{currentMonth}} -->
+    </p>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle locale="es-EC">
+        Estimada.-
+        <p class='ion-text-justify'>{{paciente}},
+          <br /> <br />
+          Te recordamos que tu próxima cita esta agendada para el:
+        </p>
+      </ion-card-subtitle>
+      <p class="ion-text-center" style="font-weight: bold;">
+        <!-- {{cita.toString("dddd, d 'de' MMMM 'del' yyyy")}} -->
+        {{cita  | date: "dd 'de' MMMM 'del' yyyy"}}
+      </p>
+    </ion-card-header>
 
-          <ion-row class="cat-row" text-center>
-              <ion-col size="5" class="cat-col">
-                <ion-button text-center fill="none" expand="block" (click)="goDrugDetails()">
-                  <ion-label>
-                    <img src="assets/imgs/drug.svg" alt="">
-                    <p>Drug 05</p>
-                  </ion-label>
-                </ion-button>
-              </ion-col>
-              <ion-col size="5" class="cat-col">
-                  <ion-button text-center fill="none" expand="block" (click)="goDrugDetails()">
-                    <ion-label>
-                      <img src="assets/imgs/drug.svg" alt="">
-                      <p>Drug 06</p>
-                    </ion-label>
-                  </ion-button>
-                </ion-col>
-            </ion-row>
+  </ion-card>
 
+  <!-- <ion-card class="cd ion-text-justify sop" style="background: transparent;">
+    <calendar id="myCalendar" locale="es-EC"
+              [eventSource]="eventSource"
+              [calendarMode]="calendar.mode"
+              [currentDate]="calendar.currentDate"
+              (onCurrentDateChanged)="onCurrentDateChanged($event)"
+              (onEventSelected)="onEventSelected($event)"
+              (onTitleChanged)="onViewTitleChanged($event)"
+              (onTimeSelected)="onTimeSelected($event)"
+              step="30">
+    </calendar>
+  </ion-card> -->
+  <div class="ion-text-center">
+    <ion-button color="primary" (click)="goBack()">
+      Aceptar
+    </ion-button>
+  </div>
+</ion-content>
 
-      </ion-grid>
-    </div>
-  </ion-content>
+<ion-footer style="height: 43px;">
+  <ion-toolbar>
+    <ion-title style="font-size: 0.7rem !important;text-align: center; padding-bottom: 10px;">
+      <fa-icon [icon]="['fas', 'phone']" class="fabf"></fa-icon>&nbsp;<fa-icon [icon]="['fab', 'whatsapp']"
+        class="fabf"></fa-icon> +593 99 821 8429 |
+      <fa-icon [icon]="['fas', 'envelope']" class="fabf"></fa-icon>&nbsp;&nbsp;nathyysal@gmail.com
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
