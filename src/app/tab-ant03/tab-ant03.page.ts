@@ -79,6 +79,7 @@ export class TabAnt03Page implements OnInit {
     this.dataPesos.push(['time', 'peso', 'mínimo', 'ideal', 'máximo']);
 
     const objArrayPesos = Object.entries(this.series.pesos);
+    objArrayPesos.sort((a, b) => (a[0] > b[0]) ? 1 : -1);
     objArrayPesos.forEach(([key, value]) => {
       this.dataPesos.push([key, value, this.infog.peso_min, this.infog.peso_ideal, this.infog.peso_max]);
 
@@ -93,18 +94,50 @@ export class TabAnt03Page implements OnInit {
 
     /**Talla */
     this.dataTalla = [];
-    this.dataTalla.push(['time', 'estatura']);
     const objArrayTalla = Object.entries(this.series.tallas);
-    objArrayTalla.forEach(([key, value]) => {
-      this.dataTalla.push([key, value * 100]);
-    });
+    objArrayTalla.sort((a, b) => (a[0] > b[0]) ? 1 : -1);
+    // sort(function(a, b) {
+    //   var dateA = new Date(a[0]);
+    //   var dateB = new Date(b[0]);
+
+    //   if (dateA < dateB ) {
+    //     return -1;
+    //   }
+    //   if (dateA > dateB ) {
+    //     return 1;
+    //   }
+    //   return 0;
+    // });
+    if (this.infog.cat_person == 'Niño' || this.infog.cat_person == 'Niña') {
+      this.dataTalla.push(['time', 'estatura', 'mín', 'ideal', 'máx']);
+      objArrayTalla.forEach(([key, value]) => {
+        this.dataTalla.push([key, (value * 100), this.infog.alt_min, this.infog.alt_ideal, this.infog.alt_max]);
+      });
+    } else {
+      this.dataTalla.push(['time', 'estatura']);
+      objArrayTalla.forEach(([key, value]) => {
+        this.dataTalla.push([key, value * 100]);
+      });
+    }
+
+
     /**IMC */
     this.dataImc = [];
-    this.dataImc.push(['time', 'imc']);
     const objArrayImc = Object.entries(this.series.imcs);
-    objArrayImc.forEach(([key, value]) => {
-      this.dataImc.push([key, value]);
-    });
+    objArrayImc.sort((a, b) => (a[0] > b[0]) ? 1 : -1);
+    if (this.infog.cat_person == 'Niño' || this.infog.cat_person == 'Niña') {
+      this.dataImc.push(['time', 'imc', 'mín', 'ideal', 'máx']);
+      objArrayImc.forEach(([key, value]) => {
+        this.dataImc.push([key, value, this.infog.imc_min, this.infog.imc_ideal, this.infog.imc_max]);
+      });
+    } else {
+      this.dataImc.push(['time', 'imc']);
+      objArrayImc.forEach(([key, value]) => {
+        this.dataImc.push([key, value]);
+      });
+    }
+
+
     /**MME */
     this.dataMme = [];
     this.dataMme.push(['time', 'mme']);
@@ -181,7 +214,7 @@ export class TabAnt03Page implements OnInit {
         },
         vAxis: {
           title: 'Pesos [Kg]',
-          
+
         },
         legend: {
           position: 'top',

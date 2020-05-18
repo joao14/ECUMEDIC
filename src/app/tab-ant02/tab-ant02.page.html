@@ -2,9 +2,9 @@
   <ion-card class="cd">
     <p class="ion-text-center" style="color:#145a69;">{{infog.loginr.data.paciente.name}}
       {{infog.loginr.data.paciente.lastname}}<br />
-      <fa-icon [icon]="['fas', 'weight']" class="fabp"></fa-icon>
+      <!-- <fa-icon [icon]="['fas', 'weight']" class="fabp"></fa-icon>
       &nbsp;{{infog.loginr.data.paciente.weight | number: '1.1-1'}}
-      Kg / {{infog.loginr.data.paciente.weight*2.2 | number: '1.1-1'}} Lb
+      Kg / {{infog.loginr.data.paciente.weight*2.2 | number: '1.1-1'}} Lb -->
     </p>
   </ion-card>
   <ion-card class="cd" style="background: transparent;">
@@ -25,7 +25,9 @@
         <ion-card class="val">
           <ion-row class="ion-text-center">
             <ion-col class="ion-text-center">
-              {{infog.imc_name}}
+              PESO: &nbsp;<span style="font-size: 0.96rem;">{{infog.loginr.data.paciente.weight | number: '1.1-1'}}
+                [Kg] / {{infog.loginr.data.paciente.weight*2.2 | number: '1.1-1'}} [Lb]</span><br />
+              {{infog.peso_name}}
             </ion-col>
           </ion-row>
         </ion-card>
@@ -81,13 +83,14 @@
         </ion-card>
         <ion-card class="val">
           <ion-row class="ion-text-center">
-            <ion-col >
+            <ion-col>
               CONSIDERACIONES
             </ion-col>
           </ion-row>
         </ion-card>
 
-        <ion-card class="cd" style="font-weight: lighter; font-size: 0.9rem;color:#145a69;">
+        <ion-card class="cd"
+          style="font-weight: lighter; font-size: 0.9rem;color:#145a69;margin-top: 5px;margin-bottom: 0px;">
           <ion-row>
             <ion-col>
               DIFF.[Kg]
@@ -109,7 +112,8 @@
             </ion-col>
           </ion-row>
         </ion-card>
-        <ion-card class="cd" style="font-weight: lighter; font-size: 0.9rem;color:#145a69;">
+        <ion-card class="cd"
+          style="font-weight: lighter; font-size: 0.9rem;color:#145a69;margin-top: 5px;margin-bottom: 0px;">
           <ion-row>
             <ion-col>
               DIFF.[Lb]
@@ -133,21 +137,132 @@
         </ion-card>
       </ion-col>
     </ion-row>
-
-  </ion-card>
-
-  <ion-card class="cd">
-    <ion-row>
-
-    </ion-row>
-
-  </ion-card>
-
-  <ion-card class="cd">
-    <ion-row>
-
-    </ion-row>
-
+    <ion-card class="val">
+      <ion-row class="ion-text-center">
+        <ion-col sise="12">
+          ALTURA: {{infog.loginr.data.paciente.size *100}} [cm]<br />
+          {{infog.alt_name}}
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card class="val2 ion-text-center" style="font-weight: lighter; font-size: 0.9rem;">
+      <ion-row>
+        <ion-col>
+          Obs.
+        </ion-col>
+        <ion-col>
+          Altura mínima
+        </ion-col>
+        <ion-col>
+          Altura ideal
+        </ion-col>
+        <ion-col>
+          Altura máxima
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card class="val1 ion-text-center" style="font-weight: lighter; font-size: 0.9rem;">
+      <ion-row>
+        <ion-col>
+          cm
+        </ion-col>
+        <ion-col>
+          {{infog.alt_min | number: '1.2-2'}}
+        </ion-col>
+        <ion-col>
+          {{infog.alt_ideal | number: '1.2-2'}}
+        </ion-col>
+        <ion-col>
+          {{infog.alt_max| number: '1.2-2'}}
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card class="cd ion-text-center"
+      style=" font-weight: lighter; font-size: 0.9rem;color:#145a69;margin-top: 5px;margin-bottom: 0px;">
+      <ion-row>
+        <ion-col>
+          DIFF.<br />[cm]
+        </ion-col>
+        <ion-col>
+          {{infog.diff_alt_min| number: '1.2-2'}}<br />
+          <fa-icon [icon]="infog.diff_alt_min >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+            class="{{infog.diff_alt_min<0?'fadw':'faup'}}"> </fa-icon>
+        </ion-col>
+        <ion-col>
+          {{infog.diff_alt_ideal| number: '1.2-2'}}<br />
+          <fa-icon [icon]="infog.diff_alt_ideal >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+            class="{{infog.diff_alt_ideal<0?'fadw':'faup'}}"> </fa-icon>
+        </ion-col>
+        <ion-col>
+          {{infog.diff_alt_max| number: '1.2-2'}}<br />
+          <fa-icon [icon]="infog.diff_alt_max >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+            class="{{infog.diff_alt_max<0?'fadw':'faup'}}"> </fa-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card class="val">
+      <ion-row class="ion-text-center">
+        <ion-col sise="12">
+          IMC: {{infog.loginr.data.paciente.imc}}<br />
+          {{infog.imc_name}}
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card class="val2 ion-text-center" style="font-weight: lighter; font-size: 0.9rem;">
+      <ion-row>
+        <ion-col>
+          Obs.
+        </ion-col>
+        <ion-col>
+          IMC mínimo
+        </ion-col>
+        <ion-col>
+          IMC ideal
+        </ion-col>
+        <ion-col>
+          IMC máximo
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card class="val1 ion-text-center" style="font-weight: lighter; font-size: 0.9rem;">
+      <ion-row>
+        <ion-col>
+          Und
+        </ion-col>
+        <ion-col>
+          {{infog.imc_min | number: '1.2-2'}}
+        </ion-col>
+        <ion-col>
+          {{infog.imc_ideal  | number: '1.2-2'}}
+        </ion-col>
+        <ion-col>
+          {{infog.imc_max | number: '1.2-2'}}
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <ion-card class="cd ion-text-center"
+      style=" font-weight: lighter; font-size: 0.9rem;color:#145a69;margin-top: 5px;margin-bottom: 0px;">
+      <ion-row>
+        <ion-col>
+          DIFF.<br />[Und]
+        </ion-col>
+        <ion-col>
+          {{infog.diff_imc_min | number: '1.2-2'}}<br />
+          <fa-icon [icon]="infog.diff_imc_min >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+            class="{{infog.diff_imc_min<0?'fadw':'faup'}}"> </fa-icon>
+        </ion-col>
+        <ion-col>
+          {{infog.diff_imc_ideal | number: '1.2-2'}}<br />
+          <fa-icon [icon]="infog.diff_imc_ideal >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+            class="{{infog.diff_imc_ideal<0?'fadw':'faup'}}"> </fa-icon>
+        </ion-col>
+        <ion-col>
+          {{infog.diff_imc_max | number: '1.2-2'}}<br />
+          <fa-icon [icon]="infog.diff_imc_max >0?['fas', 'caret-up']:['fas', 'caret-down']" size="2x"
+            class="{{infog.diff_imc_max<0?'fadw':'faup'}}"> </fa-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card>
   </ion-card>
 
 </ion-content>
