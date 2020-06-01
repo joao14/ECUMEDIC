@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "942852758078",
+    "firebase_url": "https://fulness-prod.firebaseio.com",
+    "project_id": "fulness-prod",
+    "storage_bucket": "fulness-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942852758078:android:3776bd7b3e804ca9b04f6f",
+        "android_client_info": {
+          "package_name": "add.soft.tech.com.ns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942852758078-h0h6uu2ktr8lqv64rnh4bf4554mr258n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrll3bTjlAb7bo9GJEzeZjS-WIlbcCb9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942852758078-h0h6uu2ktr8lqv64rnh4bf4554mr258n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

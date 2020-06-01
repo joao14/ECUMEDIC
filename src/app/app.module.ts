@@ -21,10 +21,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 // import { NgCalendarModule } from 'ionic2-calendar';
+//Firebase FCM
+import { FCM } from '@ionic-native/fcm/ngx';
+ 
+
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [],  
   imports: [
     BrowserModule,
     FontAwesomeModule,
@@ -36,14 +40,17 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     VideocallPageModule,
     PlanrecoPageModule,
     HttpClientModule,
-    Ng2GoogleChartsModule
-    // NgCalendarModule
+    Ng2GoogleChartsModule,
+   
   ],
-  providers: [
+  providers: [ 
+    FCM,
     StatusBar,
     SplashScreen,
     CallNumber,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    
+
   ],
   bootstrap: [AppComponent]
 })

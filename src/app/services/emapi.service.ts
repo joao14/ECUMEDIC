@@ -16,15 +16,15 @@ export class EmapiService {
   /** URL BASE */
   URL_BASE = 'http://localhost:8080/em/api/paciente';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {   
 
   }
 
   /** Http Options */
   httpOptions = {
-    headers: new HttpHeaders({
+    headers: new HttpHeaders({  
       'Content-Type': 'application/json'
-    })
+    }) 
   }
 
   /** Captura de errores */

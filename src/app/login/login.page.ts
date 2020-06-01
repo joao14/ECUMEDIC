@@ -1,32 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController, Platform, LoadingController } from '@ionic/angular';
-import { Credencial } from '../models/credencial';
-import { LoginResponse } from '../models/login-response';
-import { EmapiService } from '../services/emapi.service';
-import { InfoGlobalService } from '../services/info-global.service';
+import { Component, OnInit } from '@angular/core';  
+import { NavController, Platform, LoadingController } from '@ionic/angular';  
+import { Credencial } from '../models/credencial'; 
+import { LoginResponse } from '../models/login-response';  
+import { EmapiService } from '../services/emapi.service'; 
+import { InfoGlobalService } from '../services/info-global.service'; 
+import { FCM } from '@ionic-native/fcm/ngx'; 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
-  credencial = new Credencial();
-  lresponse: LoginResponse;
+export class LoginPage implements OnInit { 
+  credencial = new Credencial();  
+  lresponse: LoginResponse;  
 
   constructor(public navCtrl: NavController, public plarform: Platform, public emApiService: EmapiService,
-    public infog: InfoGlobalService, public loadingCtrl: LoadingController) {
-
+    public infog: InfoGlobalService, public loadingCtrl: LoadingController,private fcm: FCM){
+      console.log("¿¿¿¿¿¿¿APLICACION DE SERVICIOS?????????");
   }
 
   ngOnInit() {
+    console.log("Consultando la aplciación....");    
+    this.fcm.getToken().then(token => {      
+      console.log("El token es " + token); 
+    });   
+          
   }
 
   signUp() {
     this.navCtrl.navigateForward('signup');
-  }
+  }       
 
   signIn() {
+    console.log("ENVIANDO DATOS AL FORMULARIO============");
+    
     // var loader = this.loadingCtrl.create({
     //   message: 'Espere por favor ...',
     //   spinner: 'circles'
@@ -36,13 +44,13 @@ export class LoginPage implements OnInit {
     //     /*if (!this.isLoading) {
     //       a.dismiss().then(() => console.log('abort laoding'));
     //     }*/
-    //   });
+    //   });  
     // });
 
-
+        
     /**Only for test */
-    this.credencial.user = 'patycaro86@hotmail.com';
-    this.credencial.pass = '1720945003';
+    this.credencial.user = 'david_toscano@outlook.com';
+    this.credencial.pass = '1717034977';
     // let dre = '{"headerApp":{"code":0,"message":"Succesfully"},"data":{"paciente":{"profession":"INGENIERO EN SISTEMAS","gender":"F","mme":0,"mcadera":0,"icc":0,"birth":528526800000,"photo":"emis-24xx.png","weight":15,"dateregi":1584204787576,"nextdate":"","pgc":0,"estacivi":"C","lastname":"MORÁN ESPÍN","mcintura":0,"size":1.32,"name":"PATRICIA CAROLINA","ages":{"years":33,"months":6,"days":7,"zero":false,"negative":false,"chronology":{"id":"ISO","calendarType":"iso8601"},"units":["YEARS","MONTHS","DAYS"]},"email":"patycaro86@hotmail.com","imc":8.61},"token":"eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOiJhLGIsYyIsInN1YiI6IjIwSzA3MCM0JiIsImlzcyI6IksyMDA3IyIsImlhdCI6MTU4NjM4NDU2NCwiZXhwIjoxNTg2Mzg4MTY0fQ.w0uFGAJ1n_TRTqkwxrHyCU3TqElyngdxBMjRJsG0qwQ"}}';
     // this.infog.loginr = JSON.parse(dre);
     // localStorage.setItem('lresponse', JSON.stringify(this.infog.loginr.data.paciente));

@@ -3,7 +3,7 @@ import { LoginResponse } from '../models/login-response';
 import { Paciente } from '../models/paciente';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'  
 })
 export class InfoGlobalService {
 
