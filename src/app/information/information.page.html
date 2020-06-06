@@ -1,0 +1,54 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center>
+      {{notify?.title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-text-center">
+    <ion-card-header>
+      <ion-card-title>
+        <h4>Nathaly Yánez S.</h4>
+      </ion-card-title>
+      <ion-card-subtitle>Nutricionista</ion-card-subtitle>
+      <div class="top-btns-holder" text-center>
+        <ion-row>
+          <ion-col>
+            <img src="assets/imgs/nutri/docto.png" class="img">
+          </ion-col>
+        </ion-row>
+      </div>
+      <!-- <p align="center"> <img src="assets/imgs/docpic.png" style="width:30%;" alt=""></p> -->
+    </ion-card-header>
+    <ion-card-content text-text-justify class="tcb">
+      <ion-item>
+        <ion-label position="stacked">Fecha</ion-label>
+        <ion-input disabled readonly [value]="notify?.date"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Anuncio</ion-label>
+        <ion-input disabled readonly [value]="notify?.body"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Contenido</ion-label>
+        <ion-textarea disabled readonly [value]="notify?.content">
+        </ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer style="height: 43px;">
+  <ion-toolbar>
+    <ion-title style="font-size: 0.7rem !important;text-align: center; padding-bottom: 10px;">
+      <fa-icon [icon]="['fas', 'phone']" class="fabf"></fa-icon>&nbsp;<fa-icon [icon]="['fab', 'whatsapp']"
+        class="fabf"></fa-icon> +593 99 821 8429 |
+      <fa-icon [icon]="['fas', 'envelope']" class="fabf"></fa-icon>&nbsp;&nbsp;nathyysal@gmail.com
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

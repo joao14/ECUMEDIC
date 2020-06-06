@@ -1,21 +1,25 @@
-<ion-header no-border>
+<ion-header no-border> 
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button></ion-menu-button>  
     </ion-buttons>
-    <ion-title style="padding-left: 24%;">EcuMedic</ion-title>
+    <ion-title style="padding-left: 24%;">EcuMedics</ion-title>    
+    <ion-button (click)="getNotification()" slot="end" class="notification-icon-button">
+      <ion-badge *ngIf="contador > 0" class="notification-badge">{{contador}}</ion-badge>
+      <ion-icon slot="icon-only" name="md-notifications"></ion-icon>
+  </ion-button> 
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="header-container" style="padding-top:50px;">
-    <p class="ion-text-center" style="color:#145a69;">Bienvenido(a)<br />{{paciente.name}} {{paciente.lastname}}</p>
-  </div>
+<ion-content> 
+  <div class="header-container" style="padding-top:50px;">  
+    <p text-center style="color:#145a69;">Bienvenido(a)<br />{{paciente.name}} {{paciente.lastname}}</p>
+  </div>  
   <div class="cat-menu">
     <ion-grid>
-      <ion-row class="cat-row ion-text-center" >
+      <ion-row class="cat-row ion-text-center">
         <ion-col size="5" class="cat-col">
-          <ion-button class="ion-text-center" fill="none" expand="block" (click)="goFindaPharmacy()">
+          <ion-button text-center fill="none" expand="block" (click)="goFindaPharmacy()">
             <ion-label>
               <!-- <img src="assets/imgs/nutri/reduccion-de-peso.svg" alt=""> -->
               <fa-icon [icon]="['fas', 'street-view']" size="2x" class="fab"></fa-icon>
@@ -29,7 +33,7 @@
           </ion-button>
         </ion-col>
         <ion-col size="5" class="cat-col">
-          <ion-button class="ion-text-center" fill="none" expand="block" (click)="goFindaClinic()">
+          <ion-button text-center fill="none" expand="block" (click)="goFindaClinic()">
             <ion-label>
               <!-- <img src="assets/imgs/nutri/nutricion-clinica.svg" alt=""> -->
               <fa-icon [icon]="['fas', 'utensils']" size="2x" class="fab"></fa-icon>
@@ -40,7 +44,7 @@
       </ion-row>
       <ion-row class="cat-row ion-text-center">
         <ion-col size="5" class="cat-col">
-          <ion-button class="ion-text-center" fill="none" (click)="goDrugFindDdrugs()">
+          <ion-button text-center fill="none" (click)="goDrugFindDdrugs()">
             <ion-label>
               <!-- <fa-icon [icon]="['fas', 'clipboard-check']" size="2x" class="fab"></fa-icon> -->
               <fa-icon [icon]="['fas', 'user-md']" size="2x" class="fab"></fa-icon>
@@ -49,7 +53,7 @@
           </ion-button>
         </ion-col>
         <ion-col size="5" class="cat-col">
-          <ion-button class="ion-text-center" fill="none" expand="block" (click)="goDocList()">
+          <ion-button text-center fill="none" expand="block" (click)="goDocList()">
             <ion-label>
 
               <fa-icon [icon]="['fas', 'address-book']" size="2x" class="fab"></fa-icon>
@@ -58,10 +62,10 @@
           </ion-button>
         </ion-col>
       </ion-row>
-      <!-- <ion-row class="cat-row" class="ion-text-center">
+      <!-- <ion-row class="cat-row" text-center>
 
         <ion-col size="5" class="cat-col">
-          <ion-button class="ion-text-center" fill="none" (click)="goDocList()">
+          <ion-button text-center fill="none" (click)="goDocList()">
             <ion-label>
               <img src="assets/imgs/categoryicns/icn-schedule.svg" alt="">           
               <p text-wrap>Agendar Cita</p>
@@ -69,7 +73,7 @@
           </ion-button>
         </ion-col>
         <ion-col size="5" class="cat-col">
-          <ion-button class="ion-text-center" fill="none" (click)="goFindaHospital()">
+          <ion-button text-center fill="none" (click)="goFindaHospital()">
             <ion-label>
               <img src="assets/imgs/nutri/contacs.svg" alt="">
               <p>Consultorio</p>

@@ -1,6 +1,6 @@
 <ion-content>
   <ion-card class="cd">
-    <p class="ion-text-center" style="color:#145a69;">{{infog.loginr.data.paciente.name}}
+    <p text-center style="color:#145a69;">{{infog.loginr.data.paciente.name}}
       {{infog.loginr.data.paciente.lastname}}<br />
       <!-- <fa-icon [icon]="['fas', 'weight']" class="fabp"></fa-icon>
       &nbsp;{{infog.loginr.data.paciente.weight | number: '1.1-1'}}
@@ -9,7 +9,7 @@
   </ion-card>
   <ion-card class="cd" style="background: transparent;">
     <ion-row>
-      <ion-col size="3" class="ion-text-center">
+      <ion-col size="3" text-center>
         <ion-card class="val" style="width: 100%;padding: 0px;">
           <ion-row>
             <ion-col>
@@ -21,10 +21,10 @@
           <img src="assets/imgs/{{infog.img_imc}}" style="height: 50%;width: auto;">
         </div>
       </ion-col>
-      <ion-col size="9" class="ion-text-center">
+      <ion-col size="9" text-center>
         <ion-card class="val">
-          <ion-row class="ion-text-center">
-            <ion-col class="ion-text-center">
+          <ion-row text-center>
+            <ion-col text-center>
               PESO: &nbsp;<span style="font-size: 0.96rem;">{{infog.loginr.data.paciente.weight | number: '1.1-1'}}
                 [Kg] / {{infog.loginr.data.paciente.weight*2.2 | number: '1.1-1'}} [Lb]</span><br />
               {{infog.peso_name}}
@@ -82,7 +82,7 @@
           </ion-row>
         </ion-card>
         <ion-card class="val">
-          <ion-row class="ion-text-center">
+          <ion-row text-center>
             <ion-col>
               CONSIDERACIONES
             </ion-col>
@@ -138,7 +138,7 @@
       </ion-col>
     </ion-row>
     <ion-card class="val">
-      <ion-row class="ion-text-center">
+      <ion-row text-center>
         <ion-col sise="12">
           ALTURA: {{infog.loginr.data.paciente.size *100}} [cm]<br />
           {{infog.alt_name}}
@@ -201,7 +201,7 @@
       </ion-row>
     </ion-card>
     <ion-card class="val">
-      <ion-row class="ion-text-center">
+      <ion-row text-center>
         <ion-col sise="12">
           IMC: {{infog.loginr.data.paciente.imc}}<br />
           {{infog.imc_name}}

@@ -6,6 +6,8 @@ import { SignupdonemodalPageModule } from './modals/signupdonemodal/signupdonemo
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { SQLite } from '@ionic-native/sqlite/ngx'
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -20,11 +22,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { CallNumber } from '@ionic-native/call-number/ngx';
-// import { NgCalendarModule } from 'ionic2-calendar';
-//Firebase FCM
+// import { NgCalendarModule } from 'ionic2-calendar';        
+//Firebase FCM       
 import { FCM } from '@ionic-native/fcm/ngx';
- 
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,7 +48,9 @@ import { FCM } from '@ionic-native/fcm/ngx';
     StatusBar,
     SplashScreen,
     CallNumber,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    SQLite,
+    SQLitePorter,
     
 
   ],

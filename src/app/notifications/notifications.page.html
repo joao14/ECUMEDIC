@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!status" class="notify">
+    <div class="text">
+      Usted tiene silenciadas las notificaciones
+    </div>
+  </div>
+  <div *ngIf="status">
+    <ion-item>
+      <ion-label>
+        Recientemente
+      </ion-label>
+    </ion-item>
+    <div *ngIf="notifys != null">
+      <ion-item-sliding *ngFor="let notify of notifys">
+        <ion-item (click)="go(notify)" [ngClass]="{'item-background': notify.status === '0'}">
+          <ion-avatar slot="start">
+            <img src="../../assets/imgs/docto.png">
+          </ion-avatar>
+          <ion-label> 
+            <h1 *ngIf="notify.status === '0'">Nueva</h1>
+            <h2>{{notify.title}}</h2>
+            <h3>{{notify.date}}</h3>
+            <p>{{notify.content}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option (click)="deleteNotify(notify)">Eliminar</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer style="height: 43px;">
+  <ion-toolbar>
+    <ion-title style="font-size: 0.7rem !important;text-align: center; padding-bottom: 10px;">
+      <fa-icon [icon]="['fas', 'phone']" class="fabf"></fa-icon>&nbsp;<fa-icon [icon]="['fab', 'whatsapp']"
+        class="fabf"></fa-icon> +593 99 053 2674 |
+      <fa-icon [icon]="['fas', 'envelope']" class="fabf"></fa-icon>&nbsp;&nbsp;directorio@addsoft-tech.com
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

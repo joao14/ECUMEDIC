@@ -3,3 +3,19 @@
 .fabf {
     color: #ffffff;
 }
+
+ion-toolbar {
+    .notification-icon-button {
+      background-color: transparent;
+      height: 30px !important;
+      margin-right: -15px;
+      ion-badge {
+        position: absolute;
+        background: #f70b0b;
+        border-radius: 50%;
+        opacity: 0.9;
+        top: -0.5rem;
+        right: 1.5rem;
+      }
+    }
+  }

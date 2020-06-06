@@ -1,6 +1,6 @@
 <ion-content>
   <ion-card class="cd">
-    <p class="ion-text-center" style="color:#145a69;">Paciente<br />{{paciente.name}} {{paciente.lastname}}</p>
+    <p text-center style="color:#145a69;">Paciente<br />{{paciente.name}} {{paciente.lastname}}</p>
   </ion-card>
   <ion-card class="cd">
     <ion-row>
@@ -9,12 +9,12 @@
           Genero
         </div>
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col text-center>
         <fa-icon [icon]="paciente.gender === 'F'?['fas','female']:['fas','male']" size="2x"
           class="{{paciente.gender === 'F' ? 'fabr' : 'fab'}}"></fa-icon>
       </ion-col>
       <ion-col>
-        <div class="ion-text-center">
+        <div text-center>
           {{paciente.gender === 'F' ? 'Femenino':'Masculino'}}
         </div>
       </ion-col>
@@ -25,11 +25,11 @@
           Edad
         </div>
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col text-center>
         <fa-icon [icon]="['far', 'calendar-alt']" size="2x" class="fabp"></fa-icon>
       </ion-col>
       <ion-col>
-        <div class="ion-text-center">
+        <div text-center>
           {{paciente.ages.years}}&nbsp;Años
         </div>
       </ion-col>
@@ -41,20 +41,20 @@
           Peso
         </div>
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col text-center>
         <fa-icon [icon]="['fas', 'weight']" size="2x" class="fabp"></fa-icon>
       </ion-col>
       <ion-col>
         <ion-row>
           <ion-col>
-            <div class="ion-text-center">
+            <div text-center>
               {{paciente.weight | number: '1.2-2' }}&nbsp;[Kg]
             </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <div class="ion-text-center">
+            <div text-center>
               {{paciente.weight * 2.2 | number: '1.2-2' }}&nbsp;[lb]
             </div>
           </ion-col>
@@ -67,11 +67,11 @@
           Talla
         </div>
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col text-center>
         <fa-icon [icon]="['fas', 'arrows-alt-v']" size="2x" class="fabp"></fa-icon>
       </ion-col>
       <ion-col>
-        <div class="ion-text-center">
+        <div text-center>
           {{paciente.size}}&nbsp;[m]
         </div>
       </ion-col>
@@ -100,11 +100,11 @@
           Perímetro Cintura
         </div>
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col text-center>
         <fa-icon [icon]="['fas', 'arrows-alt-h']" size="2x" class="fabp"></fa-icon>
       </ion-col>
       <ion-col>
-        <div class="ion-text-center">
+        <div text-center>
           {{paciente.mcintura}}
         </div>
       </ion-col>
@@ -115,11 +115,11 @@
           Perímetro Cadera
         </div>
       </ion-col>
-      <ion-col class="ion-text-center">
+      <ion-col text-center>
         <fa-icon [icon]="['fas', 'arrows-alt-h']" size="2x" class="fabp"></fa-icon>
       </ion-col>
       <ion-col>
-        <div class="ion-text-center">
+        <div text-center>
           {{paciente.mcadera}}
         </div>
       </ion-col>

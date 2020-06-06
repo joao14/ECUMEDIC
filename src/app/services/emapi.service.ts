@@ -14,9 +14,10 @@ import { Credencial } from '../models/credencial';
 export class EmapiService {
 
   /** URL BASE */
-  URL_BASE = 'http://localhost:8080/em/api/paciente';
+  //URL_BASE = 'http://localhost:8080/em/api/paciente';   
+  URL_BASE = 'https://addsoft-tech.com:8443/em/api/paciente';  
 
-  constructor(private http: HttpClient) {   
+  constructor(private http: HttpClient) {     
 
   }
 

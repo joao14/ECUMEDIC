@@ -1,40 +1,39 @@
-import { Component, OnInit } from '@angular/core';  
-import { NavController, Platform, LoadingController } from '@ionic/angular';  
-import { Credencial } from '../models/credencial'; 
-import { LoginResponse } from '../models/login-response';  
-import { EmapiService } from '../services/emapi.service'; 
-import { InfoGlobalService } from '../services/info-global.service'; 
-import { FCM } from '@ionic-native/fcm/ngx'; 
+import { Component, OnInit } from '@angular/core';
+import { NavController, Platform, LoadingController } from '@ionic/angular';
+import { Credencial } from '../models/credencial';
+import { LoginResponse } from '../models/login-response'
+import { Paciente } from '../models/paciente'
+import { EmapiService } from '../services/emapi.service'
+import { DatabaseService } from '../services/database.service'
+import { InfoGlobalService } from '../services/info-global.service'
+import { NotificationService } from '../services/crud/notification.service';
+import { InfoNotification } from '../models/infoNotification';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit { 
-  credencial = new Credencial();  
-  lresponse: LoginResponse;  
+export class LoginPage implements OnInit {
+  credencial = new Credencial();
+  lresponse: LoginResponse;
 
-  constructor(public navCtrl: NavController, public plarform: Platform, public emApiService: EmapiService,
-    public infog: InfoGlobalService, public loadingCtrl: LoadingController,private fcm: FCM){
-      console.log("¿¿¿¿¿¿¿APLICACION DE SERVICIOS?????????");
+  constructor(public navCtrl: NavController, public platform: Platform, public emApiService: EmapiService,
+    public infog: InfoGlobalService, public loadingCtrl: LoadingController, public base: DatabaseService,
+    public notifyService: NotificationService) {
+
   }
 
   ngOnInit() {
-    console.log("Consultando la aplciación....");    
-    this.fcm.getToken().then(token => {      
-      console.log("El token es " + token); 
-    });   
-          
+    console.log('Consultando el JSON')
+    console.log(JSON.parse(localStorage.getItem('info')))
   }
 
   signUp() {
     this.navCtrl.navigateForward('signup');
-  }       
+  }
 
   signIn() {
-    console.log("ENVIANDO DATOS AL FORMULARIO============");
-    
     // var loader = this.loadingCtrl.create({
     //   message: 'Espere por favor ...',
     //   spinner: 'circles'
@@ -47,7 +46,7 @@ export class LoginPage implements OnInit {
     //   });  
     // });
 
-        
+
     /**Only for test */
     this.credencial.user = 'david_toscano@outlook.com';
     this.credencial.pass = '1717034977';
@@ -65,9 +64,14 @@ export class LoginPage implements OnInit {
     console.log(JSON.stringify(this.credencial));
     // 0.0 Call Login
     this.emApiService.callLogin(this.credencial).subscribe((response) => {
+
       if (response.headerApp.code === 200) {
+        //Guardamos el token del usuario
+        localStorage.setItem("token", response.data.token)
         this.infog.loginr = response;
         localStorage.setItem('lresponse', JSON.stringify(response.data.paciente));
+        //se va a guardar el en localstorage
+        this.setInformationUser(response.data.paciente)
         // 1.0 Call Series
         this.emApiService.callSeries(this.credencial.pass, response.data.token).subscribe((rseries) => {
           if (rseries.headerApp.code === 200) {
@@ -108,6 +112,46 @@ export class LoginPage implements OnInit {
         console.log('Error autenticación');
       }
     });
+
+  }
+
+  setInformationUser(data: any) {
+    this.platform.ready().then(() => {
+      if (this.platform.is("cordova")) {
+        let obj = {
+          dni: data['dni'],
+          name: data['name'],
+          lastname: data['lastname'],
+          email: data['email'],
+          estacivi: data['estacivi'],
+          gender: data['gender']
+        }
+        let infoNotification: InfoNotification = {
+          notiFcmtoken: JSON.parse(localStorage.getItem('info')).token,
+          notiGroup: "FOOD",
+          notiStatus: true,
+          notiFechregi: null,
+          notiFechactu: null,
+          notiDevice: JSON.parse(localStorage.getItem('info')).platform,
+          dniPerson: data['dni']
+        }
+        this.base.getUser(data['dni']).then((data) => {
+          if (data == undefined) {
+            this.base.addUser(obj, JSON.parse(localStorage.getItem('info')).token, JSON.parse(localStorage.getItem('info')).platform).
+              then(_ => {
+                console.log('Insert Succesfull')
+                this.notifyService.callAddInfoNotification(infoNotification, localStorage.getItem("token")).subscribe(data => {
+                  if (data['headerApp'].code == 200) {
+                    console.log('Insert in API WEB sucessfull')
+                  }
+                }, error => {
+                  console.log('Error al insertar la información del usuario')
+                })
+              })
+          }
+        })
+      }
+    })
 
   }
 

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/toPromise';
-import * as firebase from 'firebase/app';
+import { notify } from '../models/notify';
+import { Observable, BehaviorSubject } from 'rxjs'
+import { DatabaseService } from './database.service'
+
 
 
 @Injectable({
@@ -8,9 +10,20 @@ import * as firebase from 'firebase/app';
 })
 export class FcmService {
 
-  constructor() { }
+  private notificationObs$: BehaviorSubject<notify> = new BehaviorSubject(null);
 
 
+  constructor(public base: DatabaseService) {
+  }
+
+  geNotificationObs(): Observable<notify> {
+    return this.notificationObs$.asObservable()
+  }
+
+  setNotificationObs(notify_: notify) {
+    this.notificationObs$.next(notify_)
+    this.base.addNotify(notify_)
+  }
 
 
 }

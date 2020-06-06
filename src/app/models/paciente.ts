@@ -34,6 +34,7 @@ export class Paciente {
     ages: Ages;
     email: string;
     imc: number;
+    dni: string;
     /**info tabla alimentos */
     recoacl: string;
     recoazu: string;
